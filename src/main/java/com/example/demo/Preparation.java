@@ -3,9 +3,14 @@ package com.example.demo;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
+
+@Service
 public class Preparation {
+	
 	private ArrayList<CardTerritory> listCardTerritory;
 	private ArrayList<Player> PlayerList;
 	private int nbPlayer;
@@ -47,12 +52,29 @@ public class Preparation {
 	}
 	
 	
+
 	/* getters et setters */ 
 	/**
 	 * @return the listCardTerritory
 	 */
 	public ArrayList<CardTerritory> getListCardTerritory() {
 		return listCardTerritory;
+	}
+
+	
+	/**
+	 * @return the nbPlayer
+	 */
+	public int getNbPlayer() {
+		return nbPlayer;
+	}
+
+
+	/**
+	 * @param nbPlayer the nbPlayer to set
+	 */
+	public void setNbPlayer(int nbPlayer) {
+		this.nbPlayer = nbPlayer;
 	}
 
 	/**
@@ -76,8 +98,6 @@ public class Preparation {
 		PlayerList = playerList;
 	}
 
-	
-	
 	
 }
 
