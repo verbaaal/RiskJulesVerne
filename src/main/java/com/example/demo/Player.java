@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Player {
 
-	private int id;
+	private Integer id;
 	private String name;
 	private String color;
 	private ArrayList<Territory> territoriesPlayer;
@@ -23,7 +23,7 @@ public class Player {
 	 * @param continentsPlayer
 	 * @param cardsTerritoriesPlayer
 	 */
-	public Player(int id, String name, String color, ArrayList<Territory> territoriesPlayer,
+	public Player(Integer id, String name, String color, ArrayList<Territory> territoriesPlayer,
 			ArrayList<Continent> continentsPlayer, ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		super();
 		this.id = id;
@@ -50,14 +50,14 @@ public class Player {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
