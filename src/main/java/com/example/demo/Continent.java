@@ -71,8 +71,4 @@ public class Continent {
 	public void setTerritoriesCont(ArrayList<Territory> territoriesCont) {
 		this.territoriesCont = territoriesCont;
 	}
-	
-	
-	
-
 }
