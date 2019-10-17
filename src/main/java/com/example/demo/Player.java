@@ -35,6 +35,10 @@ public class Player {
 	}
 
 
+	public Player() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Player [id=" + id + ", name=" + name + ", color=" + color + ", territoriesPlayer=" + territoriesPlayer
@@ -108,7 +112,7 @@ public class Player {
 	}
 
 
-	/**
+	/**jn,
 	 * @return the continentsPlayer
 	 */
 	public ArrayList<Continent> getContinentsPlayer() {

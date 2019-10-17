@@ -125,10 +125,4 @@ public class Territory {
 	public void setNbrUnit(int nbrUnit) {
 		this.nbrUnit = nbrUnit;
 	}
-
-
-
-	
-	
-
 }
