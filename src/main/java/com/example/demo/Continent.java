@@ -3,7 +3,7 @@ package com.example.demo;
 import java.util.ArrayList;
 
 public class Continent {
-	private int id;
+	private Integer id;
 	private String name;
 	private ArrayList<Territory> territoriesCont;
 	
@@ -15,7 +15,7 @@ public class Continent {
 	 * @param name
 	 * @param territoriesCont
 	 */
-	public Continent(int id, String name, ArrayList<Territory> territoriesCont) {
+	public Continent(Integer id, String name, ArrayList<Territory> territoriesCont) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -33,14 +33,14 @@ public class Continent {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

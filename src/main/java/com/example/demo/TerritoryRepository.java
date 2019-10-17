@@ -2,6 +2,6 @@ package com.example.demo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TerritoryRepository extends JpaRepository<Integer, Long> {
+public interface TerritoryRepository extends JpaRepository<Territory, Integer> {
 	
 }
