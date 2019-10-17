@@ -1,9 +1,11 @@
 package com.example.demo;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,9 +28,23 @@ public class RiskConstroller {
 	
     //demande l'ajout d'une tache
     @PostMapping("/addPlayer")
-    public void addPlayer(@RequestBody Player newPlayer) {
-        service.createPlayer(newPlayer);
-    }
+	public void addPlayer(HttpServletRequest request) {
+    	
+		String name ="";
+		String color="";
+		ArrayList<Territory> territoriesPlayer = new ArrayList();
+		ArrayList<Continent> continentsPlayer = new ArrayList();
+		ArrayList<CardTerritory> cardsTerritoriesPlayer = new ArrayList();
+		try {           
+			name = (String) request.getParameter("name");
+			color = (String) request.getParameter("color");
+			Player player = new Player(name,color, territoriesPlayer,continentsPlayer, cardsTerritoriesPlayer);
+			
+			
+		} catch (Exception e) {
+
+		}
+	}
 
 
 }

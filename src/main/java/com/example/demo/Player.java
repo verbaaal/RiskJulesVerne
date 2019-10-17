@@ -23,10 +23,9 @@ public class Player {
 	 * @param continentsPlayer
 	 * @param cardsTerritoriesPlayer
 	 */
-	public Player(Integer id, String name, String color, ArrayList<Territory> territoriesPlayer,
+	public Player(String name, String color, ArrayList<Territory> territoriesPlayer,
 			ArrayList<Continent> continentsPlayer, ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.color = color;
 		this.territoriesPlayer = territoriesPlayer;

@@ -17,8 +17,8 @@ public class RiskService {
 	@Autowired
 	CardTerritoryRepository cardTerritoryRepo;
 
-
 	public Player createPlayer(Player player) {
+		
 		return playerRepo.save(player);
 
 	}
