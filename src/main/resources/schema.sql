@@ -2,7 +2,7 @@ CREATE TABLE continent
 
 (
 
- id_cont INTEGER NOT NULL ,
+ id_cont serial NOT NULL ,
 
  name_cont varchar(45) DEFAULT NULL,
 

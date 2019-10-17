@@ -11,7 +11,7 @@ public class RiskJulesVerneApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RiskJulesVerneApplication.class, args);
 		
-		Renfort initRenfort = new Renfort();
+		Renfort renfort = new Renfort();
 		
 		//------------Initialisation-------------
 		
@@ -138,9 +138,11 @@ public class RiskJulesVerneApplication {
 				Continent lesCavernes = new Continent(0, "Europe", listTerritoriesLesCavernes);
 				Continent lIlotAxel = new Continent(0, "Europe", listTerritoriesLIlotAxel);
 				Continent lesMarecages = new Continent(0, "Europe", listTerritoriesLesMarecages);
+				
 
 		
-		
+
+				joueur2.getContinentsPlayer().toString();
 	}
 
 }

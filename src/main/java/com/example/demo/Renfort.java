@@ -1,33 +1,40 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+
 public class Renfort {
 	
 	public Renfort() {
 
 	}
-	public int getNbrContinentPlayer(Player player) {
-	int nbrContinentPlayer = player.getContinentsPlayer().size();
-		return nbrContinentPlayer;
-	}
+	
+	/**
+	 * Methode qui met dans une variable le nbr de territoire du joueur
+	 * @param player
+	 * @return
+	 */
 	
 	public int getNbrTerritoryPlayer(Player player) {
 	int nbrTerritoryPlayer = player.getTerritoriesPlayer().size();
 		 return nbrTerritoryPlayer;
 	}
 	
-	public int getNbrRenfort(int nbrTerritoryPlayer, int nbrContinentPlayer) {
+	/**
+	 * 
+	 * @param nbrTerritoryPlayer
+	 * @param nbrContinentPlayer
+	 * @return
+	 */
+	public int getNbrRenfort(Player player ,int nbrTerritoryPlayer, int nbrContinentPlayer) {
 		
-		return 1;
+		//Territoires
+		int nbrRenfortTerritory = (int) Math.floor(nbrTerritoryPlayer / 3) ;
+		if (nbrRenfortTerritory < 2) {
+			nbrRenfortTerritory = 2 ;
+		}
+		player.getContinentsPlayer().toString();
+		return nbrRenfortTerritory;
+		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
 }
+

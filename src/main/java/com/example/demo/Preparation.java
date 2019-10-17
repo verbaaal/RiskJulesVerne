@@ -7,15 +7,13 @@ import java.util.Collections;
 
 public class Preparation {
 	private ArrayList<CardTerritory> listCardTerritory;
-<<<<<<< HEAD
 
 	
 	public Preparation(ArrayList<CardTerritory> listCardTerritory, ArrayList<Player> playersList) {
 		super();
 		this.listCardTerritory = listCardTerritory;
 	}
-
-=======
+	
 	private ArrayList<Player> PlayerList;
 	private int nbPlayer;
 	
@@ -26,8 +24,6 @@ public class Preparation {
 		
 	}
 	
-	
->>>>>>> c902611407cad5a0d7e874c76b661adf26d4874e
 	/**
 	 * shuffle des cartes territoires
 	 * @param ListCardTerritory
@@ -36,14 +32,10 @@ public class Preparation {
 	public ArrayList<CardTerritory> suffleCards(ArrayList<CardTerritory> ListCardTerritory){
 		Collections.shuffle(this.listCardTerritory);
 		//le suffle s'effectue directement sur la liste => pas besoin d'une variable intermediaire
-<<<<<<< HEAD
 		return this.listCardTerritory;
 	}
 
 
-	
-	
-	
 	//-------------------------------------------------
 
 	/* Creer le Tableau de Joueur du Jeu
@@ -135,13 +127,9 @@ public class Preparation {
 //			break;
 //		}
 
-}
-
-	
-=======
 		// /!\ La liste initiale est modifiée
-		return this.listCardTerritory;
-	}
+//return this.listCardTerritory;
+//}
 
 	/**
 	 * indique le nombre de joueur
@@ -188,11 +176,6 @@ public class Preparation {
 	public void setPlayerList(ArrayList<Player> playerList) {
 		PlayerList = playerList;
 	}
-
-	
-	
 	
 }
 
-	
->>>>>>> c902611407cad5a0d7e874c76b661adf26d4874e
