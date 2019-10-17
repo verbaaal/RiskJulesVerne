@@ -15,7 +15,7 @@ CREATE TABLE continent
 
 CREATE TABLE territory
 
-(
+(q
 
  id_terr serial NOT NULL ,
 
