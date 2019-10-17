@@ -1,7 +1,7 @@
 package com.example.demo;
 
 public class Territory {
-	private int id;
+	private Integer id;
 	private String name;
 	private Continent continent;
 	private Player owner;
@@ -18,7 +18,7 @@ public class Territory {
 	 * @param owner
 	 * @param nbrUnit
 	 */
-	public Territory(int id, String name, Continent continent, Player owner, int nbrUnit) {
+	public Territory(Integer id, String name, Continent continent, Player owner, int nbrUnit) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,7 +41,7 @@ public class Territory {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -50,7 +50,7 @@ public class Territory {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
