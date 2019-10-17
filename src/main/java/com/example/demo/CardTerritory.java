@@ -113,12 +113,6 @@ public class CardTerritory {
 	 */
 	public void setSymbole3(String symbole3) {
 		this.symbole3 = symbole3;
-	}
-
-
-
-
-
-	
+	}	
 	
 }

@@ -1,3 +1,13 @@
+
+INSERT INTO continent (name_cont, bonus_cont) VALUES
+('Les Terres Volcaniques', 6),
+('Les Terres Cristalisees', 5),
+('La Champignoneuse', 2),
+('Les Cavernes', 4),
+('Ilots Axel', 2),
+('Les Marecages', 3);
+
+
 INSERT INTO territory (name_terr, cont_id) VALUES
 ('Les Pics Fumants', 1),
 ('Le Sanctuaire du Courage', 1),
@@ -41,14 +51,6 @@ INSERT INTO territory (name_terr, cont_id) VALUES
 ('Les Marais Hurlants', 6),
 ('Les Marais Pourrissants', 6),
 ('Le Bassin des Regrets', 6);
-
-INSERT INTO continent (id_cont, name_cont, bonus_cont) VALUES
-(1, 'Les Terres Volcaniques', 6),
-(2, 'Les Terres Cristalisees', 5),
-(3, 'La Champignoneuse', 2),
-(4, 'Les Cavernes', 4),
-(5, 'Ilots Axel', 2),
-(6, 'Les Marecages', 3);
 
 INSERT INTO card_territory (card_type, territory_id) VALUES
 ('fantassin', 1),
