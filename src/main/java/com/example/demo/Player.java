@@ -1,22 +1,41 @@
+
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table (name = "player")
 public class Player {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_player")
 	private Integer id;
+	@Column(name = "name_player")
 	private String name;
+	@Column(name = "pawn_color")
 	private String color;
-	private ArrayList<Territory> territoriesPlayer;
+	
+	@OneToMany(mappedBy="owner" )
+	@Transient
+	private List<Territory> territoriesPlayer;
+	@Transient
 	private ArrayList<Continent> continentsPlayer;
+	@Transient
 	private ArrayList<CardTerritory> cardsTerritoriesPlayer;
 
 
 	/**
-	 * 
-	 * constructeur
-	 * 
-	 * @param id
 	 * @param name
 	 * @param color
 	 * @param territoriesPlayer
@@ -33,14 +52,13 @@ public class Player {
 		this.cardsTerritoriesPlayer = cardsTerritoriesPlayer;
 	}
 
-
 	public Player() {
 
 	}
 
 	@Override
 	public String toString() {
-		return "Player [id=" + id + ", name=" + name + ", color=" + color + ", territoriesPlayer=" + territoriesPlayer
+		return "Player [name=" + name + ", color=" + color + ", territoriesPlayer=" + territoriesPlayer
 				+ ", continentsPlayer=" + continentsPlayer + ", cardsTerritoriesPlayer=" + cardsTerritoriesPlayer + "]";
 	}
 
@@ -93,25 +111,18 @@ public class Player {
 	}
 
 	
-	/**
-	 * @return the territoriesPlayer
-	 */
-	public ArrayList<Territory> getTerritoriesPlayer() {
+
+	public List<Territory> getTerritoriesPlayer() {
 		return territoriesPlayer;
 	}
 
 
-
-
-	/**
-	 * @param territoriesPlayer the territoriesPlayer to set
-	 */
 	public void setTerritoriesPlayer(ArrayList<Territory> territoriesPlayer) {
 		this.territoriesPlayer = territoriesPlayer;
 	}
 
 
-	/**jn,
+	/**
 	 * @return the continentsPlayer
 	 */
 	public ArrayList<Continent> getContinentsPlayer() {
@@ -148,3 +159,5 @@ public class Player {
 
 
 }
+
+

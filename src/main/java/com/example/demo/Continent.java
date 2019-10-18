@@ -1,11 +1,27 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "continent")
 public class Continent {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
-	private ArrayList<Territory> territoriesCont;
+	@OneToMany(mappedBy="continent" )
+	private List<Territory> territoriesCont;
 	
 	/**
 	 * 
@@ -58,17 +74,16 @@ public class Continent {
 		this.name = name;
 	}
 
-	/**
-	 * @return the territoriesCont
-	 */
-	public ArrayList<Territory> getTerritoriesCont() {
+	public List<Territory> getTerritoriesCont() {
 		return territoriesCont;
 	}
 
-	/**
-	 * @param territoriesCont the territoriesCont to set
-	 */
-	public void setTerritoriesCont(ArrayList<Territory> territoriesCont) {
+	public void setTerritoriesCont(List<Territory> territoriesCont) {
 		this.territoriesCont = territoriesCont;
 	}
+
+	/**
+	 * @return the territoriesCont
+	 */
+	
 }

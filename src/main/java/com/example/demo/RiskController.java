@@ -21,13 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/")
 @RestController
-public class RiskConstroller {
+public class RiskController {
 	
 	@Autowired
 	RiskService service;
 	
     //demande l'ajout d'une tache
     @PostMapping("/addPlayer")
+ 
 	public void addPlayer(HttpServletRequest request) {
     	
 		String name ="";
@@ -38,8 +39,11 @@ public class RiskConstroller {
 		try {           
 			name = (String) request.getParameter("name");
 			color = (String) request.getParameter("color");
-			Player player = new Player(name,color, territoriesPlayer,continentsPlayer, cardsTerritoriesPlayer);
-			
+			System.out.println(name);
+			System.out.println(color);
+			Player player = new Player(name, color, territoriesPlayer, continentsPlayer, cardsTerritoriesPlayer);
+			System.out.println(player);
+			service.createPlayer(player);
 			
 		} catch (Exception e) {
 
