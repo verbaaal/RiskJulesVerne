@@ -16,11 +16,11 @@ public class RiskService {
 	TerritoryRepository territoryRepo;
 	@Autowired
 	CardTerritoryRepository cardTerritoryRepo;
-	
-	
-		public Player createPlayer(Player player) {
-			return playerRepo.save(player);
-	
+
+	public Player createPlayer(Player player) {
+		
+		return playerRepo.save(player);
+
 	}
 
 
