@@ -2,9 +2,22 @@ package com.example.demo;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "card_territory")
 public class CardTerritory {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	@ManyToOne
 	private Territory territory;
 	private String symbole;
 	private String symbole2;
@@ -17,7 +30,7 @@ public class CardTerritory {
 	 * @param territory
 	 * @param symbole
 	 */
-	public CardTerritory(int id, Territory territory, String symbole) {
+	public CardTerritory(Integer id, Territory territory, String symbole) {
 		super();
 		this.id = id;
 		this.territory = territory;
@@ -48,14 +61,14 @@ public class CardTerritory {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

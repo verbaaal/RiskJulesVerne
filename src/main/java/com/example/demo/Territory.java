@@ -1,9 +1,28 @@
 package com.example.demo;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "territory")
 public class Territory {
-	private int id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private String name;
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name ="cont_id")
 	private Continent continent;
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name ="player_owner")
 	private Player owner;
 	private int nbrUnit;
 	
@@ -18,7 +37,7 @@ public class Territory {
 	 * @param owner
 	 * @param nbrUnit
 	 */
-	public Territory(int id, String name, Continent continent, Player owner, int nbrUnit) {
+	public Territory(Integer id, String name, Continent continent, Player owner, int nbrUnit) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,7 +60,7 @@ public class Territory {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -50,7 +69,7 @@ public class Territory {
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

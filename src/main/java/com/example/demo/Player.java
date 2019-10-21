@@ -1,13 +1,28 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "player")
 public class Player {
-
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	private String name;
 	private String color;
-	private ArrayList<Territory> territoriesPlayer;
+	
+	@OneToMany(mappedBy="owner" )
+	
+	private Set<Territory> territoriesPlayer;
 	private ArrayList<Continent> continentsPlayer;
 	private ArrayList<CardTerritory> cardsTerritoriesPlayer;
 
@@ -23,7 +38,7 @@ public class Player {
 	 * @param continentsPlayer
 	 * @param cardsTerritoriesPlayer
 	 */
-	public Player(int id, String name, String color, ArrayList<Territory> territoriesPlayer,
+	public Player(Integer id, String name, String color, Set<Territory> territoriesPlayer,
 			ArrayList<Continent> continentsPlayer, ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		super();
 		this.id = id;
@@ -50,14 +65,14 @@ public class Player {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -94,20 +109,15 @@ public class Player {
 	}
 
 	
-	/**
-	 * @return the territoriesPlayer
-	 */
-	public ArrayList<Territory> getTerritoriesPlayer() {
+	
+
+
+	public Set<Territory> getTerritoriesPlayer() {
 		return territoriesPlayer;
 	}
 
 
-
-
-	/**
-	 * @param territoriesPlayer the territoriesPlayer to set
-	 */
-	public void setTerritoriesPlayer(ArrayList<Territory> territoriesPlayer) {
+	public void setTerritoriesPlayer(Set<Territory> territoriesPlayer) {
 		this.territoriesPlayer = territoriesPlayer;
 	}
 
