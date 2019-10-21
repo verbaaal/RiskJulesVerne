@@ -29,7 +29,7 @@ public class Preparation {
 	 * @param ListCardTerritory
 	 * @return
 	 */
-	public ArrayList<CardTerritory> suffleCards(ArrayList<CardTerritory> ListCardTerritory){
+	public ArrayList<CardTerritory> shuffleCards(ArrayList<CardTerritory> ListCardTerritory){
 		Collections.shuffle(this.listCardTerritory);
 		//le suffle s'effectue directement sur la liste => pas besoin d'une variable intermediaire
 		return this.listCardTerritory;
