@@ -50,6 +50,14 @@ public class RiskController {
     public List<Player> list(){
     	return service.getPlayer();
     }
+    /**
+     * demande la liste des territoires
+     * @return
+     */
+    @GetMapping("/getTerritory")
+    public List<Territory> getTerritorys(){
+    	return service.getTerritorys();
+    }
 
 
 }
