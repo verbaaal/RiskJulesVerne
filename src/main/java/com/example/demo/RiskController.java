@@ -1,54 +1,55 @@
 package com.example.demo;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
+//permet les requetes cross origine
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/")
+//indique qu'il s'agit d'un controlleur rest => traitement api ok
 @RestController
 public class RiskController {
 	
 	@Autowired
 	RiskService service;
 	
-    //demande l'ajout d'une tache
+    /**
+     * demande l'ajout d'un
+     * @param player
+     */
     @PostMapping("/addPlayer")
- 
-	public void addPlayer(HttpServletRequest request) {
-    	
-		String name ="";
-		String color="";
-		ArrayList<Territory> territoriesPlayer = new ArrayList();
-		ArrayList<Continent> continentsPlayer = new ArrayList();
-		ArrayList<CardTerritory> cardsTerritoriesPlayer = new ArrayList();
-		try {           
-			name = (String) request.getParameter("name");
-			color = (String) request.getParameter("color");
-			System.out.println(name);
-			System.out.println(color);
-			Player player = new Player(name, color, territoriesPlayer, continentsPlayer, cardsTerritoriesPlayer);
-			System.out.println(player);
-			service.createPlayer(player);
-			
-		} catch (Exception e) {
+	public void addPlayer(@RequestBody Player player) {
 
-		}
+    	service.createPlayer(player);
 	}
+    
+    /**
+     * demande l'ajout plusieurs players
+     * @param player
+     */
+    @PostMapping("/addPlayers")
+	public void addPlayers(@RequestBody ArrayList<Player> player) {
+
+    	service.createPlayers(player);
+    }
+    
+    /**
+     * demande la liste des players
+     * @return
+     */
+    @GetMapping("/getPlayer")
+    public List<Player> list(){
+    	return service.getPlayer();
+    }
 
 
 }
