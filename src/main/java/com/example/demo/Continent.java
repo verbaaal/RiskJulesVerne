@@ -37,6 +37,10 @@ public class Continent {
 		this.name = name;
 		this.territoriesCont = territoriesCont;
 	}
+	
+	public Continent() {
+		
+	}
 
 	@Override
 	public String toString() {
