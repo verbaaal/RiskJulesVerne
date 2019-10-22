@@ -50,5 +50,13 @@ public class RiskService {
 		return (ArrayList<Player>) playerRepo.findAll();
 	}
 	
+	/**
+	 * avoir la liste des territoires
+	 * @return
+	 */
+	public ArrayList<Territory> getTerritorys() {
+		return  (ArrayList<Territory>) territoryRepo.findAll();
+	}
+	
 
 }
