@@ -15,7 +15,12 @@ CREATE TABLE continent
 CREATE TABLE territory
 
 (
+<<<<<<< HEAD
 id_terr serial NOT NULL ,
+=======
+
+ id_terr serial NOT NULL ,
+>>>>>>> 4b16383ed480c92ef02ec04237b9a2cc80335070
 
  name_terr varchar(45) DEFAULT NULL,
 
@@ -24,7 +29,6 @@ id_terr serial NOT NULL ,
  player_owner INTEGER DEFAULT NULL,
 
  pawn_count INTEGER DEFAULT NULL,
-
 
  PRIMARY KEY (id_terr),
  FOREIGN KEY (cont_id) REFERENCES continent (id_cont)
@@ -62,5 +66,17 @@ CREATE TABLE player
 
  PRIMARY KEY (id_player),
  FOREIGN KEY (territory_card_id) REFERENCES card_territory (id_card)
+
+);
+
+CREATE TABLE frontier
+
+(
+ id_terr1 INTEGER NOT NULL,
+ id_terr2 INTEGER NOT NULL,
+
+ PRIMARY KEY (id_terr1, id_terr2),
+ FOREIGN KEY (id_terr1) REFERENCES territory (id_terr),
+ FOREIGN KEY (id_terr1) REFERENCES territory (id_terr)
 
 );
