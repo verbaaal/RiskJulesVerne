@@ -1,11 +1,17 @@
 package com.example.demo;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,6 +32,15 @@ public class Territory {
 	private Player owner;
 	private int nbrUnit;
 	
+	@ManyToMany(cascade={CascadeType.ALL})
+	@JoinTable(name="frontier",
+		joinColumns={@JoinColumn(name="id_terr1")},
+		inverseJoinColumns={@JoinColumn(name="id_terr2")})
+	private List<Territory> territorys;
+
+	@ManyToMany(mappedBy="territorys")
+	private List<Territory> territoryNear;
+	
 	
 	/**
 	 * 
@@ -44,6 +59,10 @@ public class Territory {
 		this.continent = continent;
 		this.owner = owner;
 		this.nbrUnit = nbrUnit;
+	}
+	
+	public Territory() {
+		
 	}
 
 	
@@ -144,4 +163,23 @@ public class Territory {
 	public void setNbrUnit(int nbrUnit) {
 		this.nbrUnit = nbrUnit;
 	}
+
+	public List<Territory> getTerritorys() {
+		return territorys;
+	}
+
+	public void setTerritorys(List<Territory> territorys) {
+		this.territorys = territorys;
+	}
+
+	public List<Territory> getTerritoryNear() {
+		return territoryNear;
+	}
+
+	public void setTerritoryNear(List<Territory> territoryNear) {
+		this.territoryNear = territoryNear;
+	}
+
+	
+	
 }
