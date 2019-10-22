@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -36,6 +37,11 @@ public class Continent {
 		this.id = id;
 		this.name = name;
 		this.territoriesCont = territoriesCont;
+	}
+	
+	public Continent(String name,ArrayList<Territory> territories) {
+		this.name = name;
+		this.territoriesCont =territories;
 	}
 
 	@Override
@@ -81,9 +87,5 @@ public class Continent {
 	public void setTerritoriesCont(List<Territory> territoriesCont) {
 		this.territoriesCont = territoriesCont;
 	}
-
-	/**
-	 * @return the territoriesCont
-	 */
 	
 }

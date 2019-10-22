@@ -1,7 +1,6 @@
 CREATE TABLE continent
 
 (
-
  id_cont serial NOT NULL ,
 
  name_cont varchar(45) DEFAULT NULL,
@@ -15,9 +14,8 @@ CREATE TABLE continent
 
 CREATE TABLE territory
 
-(q
-
- id_terr serial NOT NULL ,
+(
+id_terr serial NOT NULL ,
 
  name_terr varchar(45) DEFAULT NULL,
 

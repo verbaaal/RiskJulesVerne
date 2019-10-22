@@ -1,15 +1,9 @@
 package com.example.demo;
 
-import java.util.ArrayList;
-
 public class Renfort {
-	
-	public Renfort() {
-
-	}
-	
+		
 	/**
-	 * Methode qui met dans une variable le nbr de territoire du joueur
+	 * Methode qui permet d'obtenir le nombre de territoire d'un joueur
 	 * @param player
 	 * @return
 	 */
@@ -19,8 +13,9 @@ public class Renfort {
 		 return nbrTerritoryPlayer;
 	}
 	
+
 	/**
-	 * 
+	 * Methode qui calcul le nombre de renfort qu'obtient un joueur
 	 * @param nbrTerritoryPlayer
 	 * @param nbrContinentPlayer
 	 * @return

@@ -46,7 +46,13 @@ public class Territory {
 		this.nbrUnit = nbrUnit;
 	}
 
-	
+	/**
+	 * Construction pour instancier en DUR pour tests
+	 * @param name
+	 */
+	public Territory(String name) {
+		this.name = name;
+	}
 
 	@Override
 	public String toString() {

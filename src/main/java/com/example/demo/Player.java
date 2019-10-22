@@ -2,6 +2,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -155,7 +156,31 @@ public class Player {
 		this.cardsTerritoriesPlayer = cardsTerritoriesPlayer;
 	}
 
+	
+	/**
+	 * Methode qui verifie si le joueur a un Continent en verifiant le nombre de territoire dont il est propriétaire de ce continent-ci
+	 */
+	public void hasContinent(Player player , ArrayList<Continent> continentsGame) {
+		//Si le joueur à tout les territoires de ce continent , il a ce continent;
+		//boolean contains = player.getTerritoriesPlayer().containsAll(this.territoriesCont);
+		for (int i = 0 ; i < continentsGame.size(); i++) {
+//			if (player.getTerritoriesPlayer() continentsGame.get(i) {
+//			} 
+		System.out.println(continentsGame.get(i).getName());
+		System.out.println(player.getTerritoriesPlayer().get(i).getName());
 
+		}
+		System.out.println(Arrays.asList(player.getContinentsPlayer()));
+		System.out.println(Arrays.asList(player.getTerritoriesPlayer()));
+
+	}
+	
+	/**
+	 * Methode qui ajoute un nouveau continent au joueur selon la lsite de ses territoires 
+	 */
+	public void addContinenttoPlayer(Player player,Continent continent) {
+		this.continentsPlayer.add(continent);
+	}
 
 
 }

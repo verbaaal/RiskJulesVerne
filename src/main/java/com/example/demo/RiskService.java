@@ -22,6 +22,7 @@ public class RiskService {
 		return playerRepo.save(player);
 
 	}
+	
 
 
 }
