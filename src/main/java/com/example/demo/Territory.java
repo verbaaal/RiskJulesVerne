@@ -1,30 +1,64 @@
 package com.example.demo;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table (name = "territory")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Territory {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_terr")
 	private Integer id;
+	@Column(name = "name_terr")
 	private String name;
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name ="cont_id")
+//	@JsonManagedReference
+	@JsonIgnoreProperties({"territoriesCont"})
 	private Continent continent;
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name ="player_owner")
+//	@JsonManagedReference
+	
 	private Player owner;
+	@Transient
 	private int nbrUnit;
+
+	@ManyToMany(cascade={CascadeType.ALL})
+//	@JsonBackReference
+	
+	@JoinTable(name="frontier",
+		joinColumns={@JoinColumn(name="id_terr1")},
+		inverseJoinColumns={@JoinColumn(name="id_terr2")})
+	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
+	private List<Territory> territorys;
+	
+	@ManyToMany(mappedBy="territorys")
+//	@JsonBackReference
+	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
+	private List<Territory> territoryNear;
 	
 	
 	/**
@@ -44,6 +78,10 @@ public class Territory {
 		this.continent = continent;
 		this.owner = owner;
 		this.nbrUnit = nbrUnit;
+	}
+	
+	public Territory() {
+		
 	}
 
 	
@@ -144,4 +182,23 @@ public class Territory {
 	public void setNbrUnit(int nbrUnit) {
 		this.nbrUnit = nbrUnit;
 	}
+
+	public List<Territory> getTerritorys() {
+		return territorys;
+	}
+
+	public void setTerritorys(List<Territory> territorys) {
+		this.territorys = territorys;
+	}
+
+	public List<Territory> getTerritoryNear() {
+		return territoryNear;
+	}
+
+	public void setTerritoryNear(List<Territory> territoryNear) {
+		this.territoryNear = territoryNear;
+	}
+
+	
+	
 }

@@ -14,8 +14,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table (name = "player")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,7 +45,7 @@ public class Player {
 	 * @param continentsPlayer
 	 * @param cardsTerritoriesPlayer
 	 */
-	public Player(String name, String color, ArrayList<Territory> territoriesPlayer,
+	public Player(Integer id, String name, String color, ArrayList<Territory> territoriesPlayer,
 			ArrayList<Continent> continentsPlayer, ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		super();
 		this.name = name;
@@ -154,6 +157,8 @@ public class Player {
 	public void setCardsTerritoriesPlayer(ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		this.cardsTerritoriesPlayer = cardsTerritoriesPlayer;
 	}
+
+
 
 
 
