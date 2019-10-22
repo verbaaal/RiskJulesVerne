@@ -19,10 +19,12 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table (name = "territory")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Territory {
 	
 	@Id
@@ -33,24 +35,29 @@ public class Territory {
 	private String name;
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name ="cont_id")
-	@JsonManagedReference
+//	@JsonManagedReference
+	@JsonIgnoreProperties({"territoriesCont"})
 	private Continent continent;
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name ="player_owner")
-	@JsonManagedReference
+//	@JsonManagedReference
+	
 	private Player owner;
 	@Transient
 	private int nbrUnit;
 
 	@ManyToMany(cascade={CascadeType.ALL})
-	@JsonBackReference
+//	@JsonBackReference
+	
 	@JoinTable(name="frontier",
 		joinColumns={@JoinColumn(name="id_terr1")},
 		inverseJoinColumns={@JoinColumn(name="id_terr2")})
+	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
 	private List<Territory> territorys;
 	
 	@ManyToMany(mappedBy="territorys")
-	@JsonBackReference
+//	@JsonBackReference
+	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
 	private List<Territory> territoryNear;
 	
 	

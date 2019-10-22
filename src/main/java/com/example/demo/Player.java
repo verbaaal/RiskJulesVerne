@@ -14,8 +14,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table (name = "player")
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
