@@ -55,10 +55,6 @@ public class Territory {
 	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
 	private List<Territory> territorys;
 	
-	@ManyToMany(mappedBy="territorys")
-//	@JsonBackReference
-	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
-	private List<Territory> territoryNear;
 	
 	
 	/**
@@ -191,12 +187,16 @@ public class Territory {
 		this.territorys = territorys;
 	}
 
-	public List<Territory> getTerritoryNear() {
-		return territoryNear;
-	}
+	public Boolean isNeighboor(Territory territory) {
 
-	public void setTerritoryNear(List<Territory> territoryNear) {
-		this.territoryNear = territoryNear;
+		if( 36  == territory.getId()){
+
+			return true;
+
+		} else {
+			return false;
+		}
+
 	}
 
 	

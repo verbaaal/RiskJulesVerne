@@ -58,6 +58,11 @@ public class RiskController {
     public List<Territory> getTerritorys(){
     	return service.getTerritorys();
     }
+    
+    @GetMapping("/attack")
+    public void attack() {
+    	service.attack();
+    }
 
 
 }
