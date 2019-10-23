@@ -15,12 +15,7 @@ CREATE TABLE continent
 CREATE TABLE territory
 
 (
-<<<<<<< HEAD
-id_terr serial NOT NULL ,
-=======
-
  id_terr serial NOT NULL ,
->>>>>>> 4b16383ed480c92ef02ec04237b9a2cc80335070
 
  name_terr varchar(45) DEFAULT NULL,
 
