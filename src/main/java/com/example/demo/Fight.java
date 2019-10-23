@@ -5,7 +5,7 @@ import java.util.List;
 public class Fight {
 	
 	private Boolean canPick;
-	private List<Territory> canAttack;
+	
 	
 	
 	Player player1 = new Player();
@@ -32,15 +32,8 @@ public class Fight {
 		
 	}
 	
-	public List territoryCanattack(Territory terr1, Territory terr2){
-		
-		for (int i = 0; i<terr1.getTerritorys().size(); i++) {
-			
-		}
-		return canAttack;
-			
-		
-	}
+	
+
 	
 	
 }

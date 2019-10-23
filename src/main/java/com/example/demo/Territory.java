@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -24,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table (name = "territory")
 public class Territory {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_terr")
@@ -45,15 +42,12 @@ public class Territory {
 	@ManyToMany(cascade={CascadeType.ALL})
 	@JsonBackReference
 	@JoinTable(name="frontier",
-		joinColumns={@JoinColumn(name="id_terr1")},
-		inverseJoinColumns={@JoinColumn(name="id_terr2")})
+	joinColumns={@JoinColumn(name="id_terr1")},
+	inverseJoinColumns={@JoinColumn(name="id_terr2")})
 	private List<Territory> territorys;
-	
-	@ManyToMany(mappedBy="territorys")
-	@JsonBackReference
-	private List<Territory> territoryNear;
-	
-	
+
+
+
 	/**
 	 * 
 	 * constructeur 
@@ -72,15 +66,17 @@ public class Territory {
 		this.owner = owner;
 		this.nbrUnit = nbrUnit;
 	}
-	
+
 	public Territory() {
-		
+
 	}
 
-	
+
 
 	@Override
 	public String toString() {
+		for (Territory territory : territorys) {
+			System.out.println(territory.getId());}
 		return "Territory [id=" + id + ", name=" + name + ", owner=" + owner + ", nbrUnit=" + nbrUnit + "]";
 	}
 
@@ -184,14 +180,15 @@ public class Territory {
 		this.territorys = territorys;
 	}
 
-	public List<Territory> getTerritoryNear() {
-		return territoryNear;
-	}
+	public Boolean isNeighboor(Territory territory) {
 
-	public void setTerritoryNear(List<Territory> territoryNear) {
-		this.territoryNear = territoryNear;
-	}
+		if( 36  == territory.getId()){
 
-	
-	
+			return true;
+
+		} else {
+			return false;
+		}
+
+	}
 }
