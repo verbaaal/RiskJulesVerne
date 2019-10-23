@@ -23,11 +23,14 @@ function afficherNbInput() {
     for (i = 1; i <= select.value; i++) {
         var item = document.createElement('label');
         var newInput = document.createElement('input');
+        var divColor = document.createElement('div');
         item.innerHTML = "<br>nom du Joueur " + i + "<br>";
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
+        divColor.setAttribute("class",'joueur' + i )
         divInput.appendChild(item);
+        divInput.appendChild(divColor);
         divInput.appendChild(newInput);
     }
 }
@@ -42,11 +45,13 @@ function inputOnLoad() {
     for (i = 1; i < 3; i++) {
         var item = document.createElement('label');
         var newInput = document.createElement('input');
+        var divColor = document.createElement('div');
         item.innerHTML = "<br>nom du Joueur " + i + "<br>";
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
         divInput.appendChild(item);
+        divInput.appendChild(divColor);
         divInput.appendChild(newInput);
     }
 }
@@ -71,15 +76,29 @@ const insertPost = async function (data) {
 
 } 
 
-
+/**
+ * 
+ * envoi les informations des joueurs selon le nombre de joueurs choisit 
+ *
+ *  
+ */
 function getValue() {
-
-    console.log(select.value)
+    //init variable
+    var joueur1="";
+    var joueur2="";
+    var joueur3="";
+    var joueur4="";
+    var joueur5="";
+    var joueur6="";
+    // console.log(select.value)
+    
+    //recuperation du nombre de joueurs via le select
     switch (select.value) {
+        
         case "2":
-            console.log("cas 2")
-            let joueur1 = document.getElementById('joueur1').value
-            let joueur2 = document.getElementById('joueur2').value
+            // console.log("cas 2")
+            joueur1 = document.getElementById('joueur1').value
+            joueur2 = document.getElementById('joueur2').value
             insertPost([{
                     name: joueur1,
                     color: 'rouge'
@@ -91,10 +110,10 @@ function getValue() {
             ])
             break;
         case "3":
-            console.log("cas 3")
+            // console.log("cas 3")
             joueur1 = document.getElementById('joueur1').value
             joueur2 = document.getElementById('joueur2').value
-            let joueur3 = document.getElementById('joueur3').value
+            joueur3 = document.getElementById('joueur3').value
             insertPost([{
                     name: joueur1,
                     color: 'rouge'
@@ -110,11 +129,11 @@ function getValue() {
             ])
             break;
         case "4":
-            console.log("cas 4")
+            // console.log("cas 4")
             joueur1 = document.getElementById('joueur1').value
             joueur2 = document.getElementById('joueur2').value
             joueur3 = document.getElementById('joueur3').value
-            let joueur4 = document.getElementById('joueur4').value
+            joueur4 = document.getElementById('joueur4').value
             insertPost([{
                     name: joueur1,
                     color: 'rouge'
@@ -134,12 +153,12 @@ function getValue() {
             ])
             break;
         case "5":
-            console.log("cas 5")
+            // console.log("cas 5")
             joueur1 = document.getElementById('joueur1').value
             joueur2 = document.getElementById('joueur2').value
             joueur3 = document.getElementById('joueur3').value
             joueur4 = document.getElementById('joueur4').value
-            let joueur5 = document.getElementById('joueur5').value
+            joueur5 = document.getElementById('joueur5').value
             insertPost([{
                     name: joueur1,
                     color: 'rouge'
@@ -163,13 +182,13 @@ function getValue() {
             ])
             break
         case "6":
-            console.log("cas 6")
+            // console.log("cas 6")
             joueur1 = document.getElementById('joueur1').value
             joueur2 = document.getElementById('joueur2').value
             joueur3 = document.getElementById('joueur3').value
             joueur4 = document.getElementById('joueur4').value
             joueur5 = document.getElementById('joueur5').value
-            let joueur6 = document.getElementById('joueur6').value
+            joueur6 = document.getElementById('joueur6').value
             insertPost([{
                     name: joueur1,
                     color: 'rouge'
