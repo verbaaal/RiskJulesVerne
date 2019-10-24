@@ -14,10 +14,9 @@ var urlGet = "http://localhost:8080/getPlayer";
 // var test;
 const getPlayer = async function () {
     try {
-        const response = await fetch(urlGet)
+        let response = await fetch(urlGet)
         if (response.ok) {
-            const datas = await response.json()
-
+            let datas = await response.json()
             console.log(datas)
         } else {
             console.error('Retour du serveur : ', response.status)
