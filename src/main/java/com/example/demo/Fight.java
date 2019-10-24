@@ -34,7 +34,7 @@ public class Fight {
 	
 	public List territoryCanattack(Territory terr1, Territory terr2){
 		
-		for (int i = 0; i<terr1.getTerritorys().size(); i++) {
+		for (int i = 0; i<terr1.getNeighbors().size(); i++) {
 			
 		}
 		return canAttack;
