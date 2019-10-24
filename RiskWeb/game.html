@@ -1,17 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Risk - jule verne</title>
-</head>
-<body>
-    <h1>2eme phase</h1>
-    <div id="nbPlayer">nombre de joueur : </div>
-    <div id="game">
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Jules Verne</title>
+    <link rel="stylesheet" href="assets/css/game.css">
+</head>
+
+<body>
+    <div id="boxgame">
+        <h1>Risk Jules Verne</h1>
+        <div id="game">
+
+            <div class="ligne">
+                <div class="mer" id="x1y1">
+                </div>
+                <div class="mer" id="x2y1">
+                </div>
+                <div class="mer" id="x3y1">
+                </div>
+                <div class="mer" id="x4y1">
+                </div>
+                <div class="mer" id="x5y1">
+                </div>
+                <div class="terre les-cavernes" id="x6y1">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y1">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y1">
+                </div>
+                <div class="mer" id="x9y1">
+                </div>
+                <div class="mer" id="x10y1">
+                </div>
+                <div class="mer" id="x11y1">
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre l-ilot-axel" id="x1y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre l-ilot-axel" id="x2y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y2">
+                </div>
+                <div class="mer" id="x4y2">
+                </div>
+                <div class="mer" id="x5y2">
+                </div>
+                <div class="terre les-cavernes" id="x6y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y2">
+                </div>
+                <div class="mer" id="x9y2">
+                </div>
+                <div class="terre la-champignoneuse" id="x10y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre la-champignoneuse" id="x11y2">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre l-ilot-axel" id="x1y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre l-ilot-axel" id="x2y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y3">
+                </div>
+                <div class="mer" id="x4y3">
+                </div>
+                <div class="mer" id="x5y3">
+                </div>
+                <div class="terre les-cavernes" id="x6y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y3">
+                </div>
+                <div class="mer" id="x9y3">
+                </div>
+                <div class="terre la-champignoneuse" id="x10y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre la-champignoneuse" id="x11y3">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="mer" id="x1y4"></div>
+                <div class="terre terres-volcaniques" id="x2y4">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y4">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y4">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x5y4">
+                </div>
+                <div class="mer" id="x6y4">
+                </div>
+                <div class="mer" id="x7y4">
+                </div>
+                <div class="mer" id="x8y4">
+                </div>
+                <div class="mer" id="x9y4">
+                </div>
+                <div class="mer" id="x10y4">
+                </div>
+                <div class="terre terres-cristalisees" id="x11y4">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="mer" id="x1y5"></div>
+                <div class="terre terres-volcaniques" id="x2y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x5y5">
+                </div>
+                <div class="terre les-marecages" id="x6y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y5">
+                </div>
+                <div class="mer" id="x9y5">
+                </div>
+                <div class="terre terres-cristalisees" id="x10y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y5">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre terres-volcaniques" id="x1y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x2y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x5y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x6y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y6">
+                </div>
+                <div class="terre terres-cristalisees" id="x9y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x10y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y6">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+            <div class="ligne">
+                <div class="terre terres-volcaniques" id="x1y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x2y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y7">
+                </div>
+                <div class="mer" id="x4y7">
+                </div>
+                <div class="mer" id="x5y7">
+                </div>
+                <div class="terre les-marecages" id="x6y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x1y7"></div>
+                <div class="terre terres-cristalisees" id="x9y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x10y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y7">
+                    <div class="name-territory"></div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="assets/js/pregame.js"></script>
-</body>
-</html>
+
+    <div id="box-add-unit">
+        <button id="+">+</button>
+        <div id=nbr-unit>20</div>
+        <button id="+">-</button>
+    </div>
+
+    <div id="box-list-player">
+        <ul>
+            <li>Player 1 | 15 Territoires - 2 Continents</li>
+            <li>Player 2 | 07 Territoires - 1 Continents</li>
+            <li>Player 3 | 03  Territoires - 0 Continents</li>
+            <li>Player 4 | 02  Territoires - 0 Continents</li>
+            <li>Player 5 | 18 Territoires - 2 Continents</li>
+            <li>Player 6 | 05  Territoires - 0 Continents</li>
+
+        </ul>
+    </div>
+
+</body></html>
