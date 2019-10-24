@@ -133,8 +133,6 @@ public class Player {
 	}
 
 
-
-
 	/**
 	 * @param continentsPlayer the continentsPlayer to set
 	 */
@@ -157,10 +155,6 @@ public class Player {
 	public void setCardsTerritoriesPlayer(ArrayList<CardTerritory> cardsTerritoriesPlayer) {
 		this.cardsTerritoriesPlayer = cardsTerritoriesPlayer;
 	}
-
-
-
-
 
 
 }
