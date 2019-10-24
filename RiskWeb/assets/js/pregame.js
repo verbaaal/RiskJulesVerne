@@ -1,9 +1,9 @@
 //url liste des players
-var urlGet = "http://localhost:8080/getPlayer";
+var urlPlayers = "http://localhost:8080/getPlayer";
 
 // recuperation de la liste de joueurs dans la bdd
 let players
-fetch(urlGet)
+fetch(urlPlayers)
     .then(function (response) {
         return response.json()
     }).then(function (players) {

@@ -1,5 +1,5 @@
 //url liste des players
-var urlGet = "http://localhost:8080/deletePlayer";
+var urlDelete = "http://localhost:8080/deleteAll";
 //url post list de players
 var urlPost = "http://localhost:8080/addPlayers";
 //menu select
@@ -8,9 +8,18 @@ var select = document.getElementById('nbJoueurs');
 var divInput = document.getElementById('inputPlayers')
 
 
-//recuperation de la liste de joueurs dans la bdd
-fetch(urlGet)
-
+//suppression de la liste de joueurs dans la bdd
+const deleteAll = async function (data) {
+    let response = await fetch(urlDelete, {
+        'method': 'DELETE',
+    })
+    if(response.ok){
+        console.log("message : la liste des joueurs a bien été réinitialisée")
+    }else{
+        console.log('erreur dans la suppression de la liste des joueurs')
+    }
+}
+deleteAll();
 
 /**
  * modifie l'affichage du nombre des inputs 
@@ -24,14 +33,17 @@ function afficherNbInput() {
     }
     //creation et affichage des labels / inputs / div nécessaire
     for (i = 1; i <= select.value; i++) {
+        //creation des éléments
         var item = document.createElement('label');
         var newInput = document.createElement('input');
         var divColor = document.createElement('div');
+        //modification des éléments
         item.innerHTML = "<br>nom du Joueur " + i + "<br>";
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
         divColor.setAttribute("class", 'joueur' + i)
+        //insertion des éléments
         divInput.appendChild(item);
         divInput.appendChild(divColor);
         divInput.appendChild(newInput);
@@ -46,14 +58,17 @@ select.onchange = afficherNbInput
 function inputOnLoad() {
     //creation et affichage des labels / inputs / div nécessaire
     for (i = 1; i < 3; i++) {
+        //creation des éléments
         var item = document.createElement('label');
         var newInput = document.createElement('input');
         var divColor = document.createElement('div');
+        //modification des éléments
         item.innerHTML = "<br>nom du Joueur " + i + "<br>";
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
         divColor.setAttribute("class", 'joueur' + i)
+        //insertion des éléments
         divInput.appendChild(item);
         divInput.appendChild(divColor);
         divInput.appendChild(newInput);
@@ -62,8 +77,6 @@ function inputOnLoad() {
 window.onload = inputOnLoad;
 
 
-//ecouteur d'evenement sur le bouton
-var sendButton = document.getElementById('envoyer');
 
 
 
@@ -81,7 +94,7 @@ const insertPost = async function (data) {
         body: JSON.stringify(data)
 
     })
-    console.log(response)
+    // console.log(response)
     //verification de la reponse du serveur
     if (response.ok) {
         nextPage();
@@ -90,13 +103,7 @@ const insertPost = async function (data) {
     }
 }
 
-//recuperation de la liste de joueurs dans la bdd
-fetch(urlGet)
-    .then(function (response) {
-        return response.json()
-    }).then(function (data) {
-        console.log(data)
-    });
+
 /**
  * redirection vers page de jeux
  * 
@@ -112,12 +119,14 @@ function nextPage() {
     setInterval(getNextPage, 1000);
 }
 
+// cible le bouton d'envoi
+var sendButton = document.getElementById('envoyer');
 
 /**
  * envoi les informations des joueurs selon le nombre de joueurs choisit 
  *  
  */
-function getValue() {
+function postValue() {
     //init variables
     var joueur1 = "";
     var joueur2 = "";
@@ -253,6 +262,7 @@ function getValue() {
             break;
     }
 }
-sendButton.onclick = getValue;
+//au click on envoi les données au serveur
+sendButton.onclick = postValue;
 
 
