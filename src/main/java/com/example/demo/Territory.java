@@ -52,8 +52,8 @@ public class Territory {
 	@JoinTable(name="frontier",
 		joinColumns={@JoinColumn(name="id_terr1")},
 		inverseJoinColumns={@JoinColumn(name="id_terr2")})
-	@JsonIgnoreProperties({"continent", "territorys", "territoryNear"})
-	private List<Territory> territorys;
+	@JsonIgnoreProperties({"continent", "territorys"})
+	private List<Territory> Neighbors;
 	
 	
 	
@@ -179,12 +179,13 @@ public class Territory {
 		this.nbrUnit = nbrUnit;
 	}
 
-	public List<Territory> getTerritorys() {
-		return territorys;
+
+	public List<Territory> getNeighbors() {
+		return Neighbors;
 	}
 
-	public void setTerritorys(List<Territory> territorys) {
-		this.territorys = territorys;
+	public void setNeighbors(List<Territory> neighbors) {
+		Neighbors = neighbors;
 	}
 
 	public Boolean isNeighboor(Territory territory) {
