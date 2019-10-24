@@ -7,26 +7,10 @@ fetch(urlPlayers)
     .then(function (response) {
         return response.json()
     }).then(function (players) {
-        var nbjoueur = document.getElementById('nbPlayer');
-        nbjoueur.innerHTML += players.length;
+        var boxPlayer = document.getElementById('box-list-player');
+        console.log(players)
     })
 
-// var test;
-// let players;
-// const getPlayer = async function () {
-//     try {
-//         let response = await fetch(urlGet)
-//         if (response.ok) {
-//             players = response.json()
-//         } else {
-//             console.error('Retour du serveur : ', response.status)
-//         }
-//     } catch (e){
-//         console.log(e)
-//     }
-// }
-// getPlayer(); 
-// console.log(players)
 
 
 
