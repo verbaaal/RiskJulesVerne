@@ -10,12 +10,13 @@ var urlGet = "http://localhost:8080/getPlayer";
 //     })
 // var nbjoueur = document.getElementById('nbPlayer');
 // nbjoueur.innerHTML += data.length;
-
+var test;
 const getPlayer = async function () {
     try {
         let response = await fetch(urlGet)
         if (response.ok) {
             let datas = await response.json()
+
             console.log(datas)
         } else {
             console.error('Retour du serveur : ', response.status)
@@ -25,4 +26,5 @@ const getPlayer = async function () {
     }
 }
 
-getPlayer()
+
+console.log(test)

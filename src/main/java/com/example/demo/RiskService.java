@@ -69,4 +69,7 @@ public class RiskService {
 		
 	}
 
+	public void deletePlayers() {
+		playerRepo.deleteAll();
+	}
 }
