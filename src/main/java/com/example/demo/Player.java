@@ -2,6 +2,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -133,8 +134,6 @@ public class Player {
 	}
 
 
-
-
 	/**
 	 * @param continentsPlayer the continentsPlayer to set
 	 */
@@ -174,6 +173,7 @@ public class Player {
 		System.out.println(Arrays.asList(player.getContinentsPlayer()));
 		System.out.println(Arrays.asList(player.getTerritoriesPlayer()));
 
+
 	}
 	
 	/**
@@ -182,6 +182,7 @@ public class Player {
 	public void addContinenttoPlayer(Player player,Continent continent) {
 		this.continentsPlayer.add(continent);
 	}
+
 
 
 

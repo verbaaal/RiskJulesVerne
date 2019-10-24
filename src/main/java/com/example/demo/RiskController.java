@@ -51,6 +51,8 @@ public class RiskController {
     public List<Player> list(){
     	return service.getPlayer();
     }
+    
+    
     /**
      * demande la liste des territoires
      * @return
@@ -64,6 +66,9 @@ public class RiskController {
     public void attack() {
     	service.attack();
     }
-
-
+    @DeleteMapping("/deleteAll")
+    public void deletePlayers() {
+    	service.deletePlayers();
+    }
+    
 }

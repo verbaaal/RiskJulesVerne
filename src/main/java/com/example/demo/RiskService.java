@@ -51,6 +51,7 @@ public class RiskService {
 	}
 	
 
+	
 	/**
 	 * avoir la liste des territoires
 	 * @return
@@ -68,4 +69,7 @@ public class RiskService {
 		
 	}
 
+	public void deletePlayers() {
+		playerRepo.deleteAll();
+	}
 }
