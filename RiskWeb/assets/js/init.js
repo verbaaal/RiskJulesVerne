@@ -1,5 +1,5 @@
 //url liste des players
-var urlGet = "http://localhost:8080/getPlayer";
+var urlGet = "http://localhost:8080/deletePlayer";
 //url post list de players
 var urlPost = "http://localhost:8080/addPlayers";
 //menu select
@@ -10,11 +10,6 @@ var divInput = document.getElementById('inputPlayers')
 
 //recuperation de la liste de joueurs dans la bdd
 fetch(urlGet)
-    .then(function (response) {
-        return response.json()
-    }).then(function (data) {
-        console.log(data)
-    });
 
 
 /**
