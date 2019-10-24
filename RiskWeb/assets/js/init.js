@@ -8,6 +8,14 @@ var select = document.getElementById('nbJoueurs');
 var divInput = document.getElementById('inputPlayers')
 
 
+//recuperation de la liste de joueurs dans la bdd
+fetch(urlGet)
+    .then(function (response) {
+        return response.json()
+    }).then(function (data) {
+        console.log(data)
+    });
+
 
 /**
  * modifie l'affichage du nombre des inputs 
@@ -19,7 +27,7 @@ function afficherNbInput() {
     while (divInput.children.length > 0) {
         divInput.removeChild(divInput.firstChild);
     }
-    //affichage des labels et inputs nécessaire
+    //creation et affichage des labels / inputs / div nécessaire
     for (i = 1; i <= select.value; i++) {
         var item = document.createElement('label');
         var newInput = document.createElement('input');
@@ -28,7 +36,7 @@ function afficherNbInput() {
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
-        divColor.setAttribute("class",'joueur' + i )
+        divColor.setAttribute("class", 'joueur' + i)
         divInput.appendChild(item);
         divInput.appendChild(divColor);
         divInput.appendChild(newInput);
@@ -37,11 +45,11 @@ function afficherNbInput() {
 select.onchange = afficherNbInput
 
 /**
- * 
  * afficher les inputs au chargement de la page
+ * 
  */
 function inputOnLoad() {
-
+    //creation et affichage des labels / inputs / div nécessaire
     for (i = 1; i < 3; i++) {
         var item = document.createElement('label');
         var newInput = document.createElement('input');
@@ -50,6 +58,7 @@ function inputOnLoad() {
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
+        divColor.setAttribute("class", 'joueur' + i)
         divInput.appendChild(item);
         divInput.appendChild(divColor);
         divInput.appendChild(newInput);
@@ -61,9 +70,12 @@ window.onload = inputOnLoad;
 //ecouteur d'evenement sur le bouton
 var sendButton = document.getElementById('envoyer');
 
+
+
 /**
  * fonction d'envoi des players vers la bdd
  * @param {*} data 
+ * 
  */
 const insertPost = async function (data) {
     let response = await fetch(urlPost, {
@@ -72,29 +84,57 @@ const insertPost = async function (data) {
             'Content-type': 'application/json'
         },
         body: JSON.stringify(data)
-    })
 
-} 
+    })
+    console.log(response)
+    //verification de la reponse du serveur
+    if (response.ok) {
+        nextPage();
+    } else {
+        console.log("ho nooo")
+    }
+}
+
+//recuperation de la liste de joueurs dans la bdd
+fetch(urlGet)
+    .then(function (response) {
+        return response.json()
+    }).then(function (data) {
+        console.log(data)
+    });
+/**
+ * redirection vers page de jeux
+ * 
+ */
+function getNextPage() {
+    document.location.href = "game.html"
+}
+/**
+ * declenchement de la fonction getNextPage sous 1s
+ * 
+ */
+function nextPage() {
+    setInterval(getNextPage, 1000);
+}
+
 
 /**
- * 
  * envoi les informations des joueurs selon le nombre de joueurs choisit 
- *
  *  
  */
 function getValue() {
-    //init variable
-    var joueur1="";
-    var joueur2="";
-    var joueur3="";
-    var joueur4="";
-    var joueur5="";
-    var joueur6="";
+    //init variables
+    var joueur1 = "";
+    var joueur2 = "";
+    var joueur3 = "";
+    var joueur4 = "";
+    var joueur5 = "";
+    var joueur6 = "";
     // console.log(select.value)
-    
+
     //recuperation du nombre de joueurs via le select
     switch (select.value) {
-        
+
         case "2":
             // console.log("cas 2")
             joueur1 = document.getElementById('joueur1').value
@@ -108,6 +148,7 @@ function getValue() {
                     color: 'bleu'
                 }
             ])
+
             break;
         case "3":
             // console.log("cas 3")
@@ -220,10 +261,3 @@ function getValue() {
 sendButton.onclick = getValue;
 
 
-//recuperation de la liste de joueurs dans la bdd
-fetch(urlGet)
-    .then(function (response) {
-        return response.json()
-    }).then(function (data) {
-        console.log(data)
-    });
