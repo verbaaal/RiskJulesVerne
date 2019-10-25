@@ -6,23 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/init.css">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Tangerine&display=swap" rel="stylesheet">
     <title>Risk - Jules Verne</title>
 </head>
 
 <body>
+
+        <video autoplay muted loop id="myVideo">
+                <source src="assets/img/bg.webm" type="video/webm">
+        </video>
+
+        <div id="menu-principale">
+            <h1>Risk Jules Verne</h1>
+            <button id="btn-jouer" onclick="funcbtnJouer()">Jouer</button>
+            <button>Paramètres</button>
+            <button>Quitter</button>
+        </div>
+
     <h1>Risk Jule Verne</h1>
 
-    <label for="nbJoueurs">Nombre de joueurs</label><br>
-    <select name="nbJoueurs" id="nbJoueurs">
-        <option value="2">2 Joueurs</option>
-        <option value="3">3 Joueurs</option>
-        <option value="4">4 Joueurs</option>
-        <option value="5">5 Joueurs</option>
-        <option value="6">6 Joueurs</option>
-    </select><br>
-    <div id='inputPlayers'></div>
-    <button type="submit" id="envoyer">Jouer</button>
-
+        <div id ="content">
+        <div id="modal-players">
+            <label for="nbJoueurs">Nombre de joueurs</label><br>
+            <select name="nbJoueurs" id="nbJoueurs">
+                <option value="2">2 Joueurs</option>
+                <option value="3">3 Joueurs</option>
+                <option value="4">4 Joueurs</option>
+                <option value="5">5 Joueurs</option>
+                <option value="6">6 Joueurs</option>
+            </select><br>
+            <div id='inputPlayers'></div>
+            <button type="submit" id="envoyer">envoyer</button>
+        </div>
+    </div>
     <script src="assets/js/init.js"></script>
 
 </body>
