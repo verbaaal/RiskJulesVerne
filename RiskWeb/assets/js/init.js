@@ -265,15 +265,12 @@ function postValue() {
 //au click on envoi les données au serveur
 sendButton.onclick = postValue;
 
-//Lauree
 // Modal system
 var modalPlayers = document.getElementById("content");
-var modalMenuPrincipale = document.getElementById("menu-principale");
+var modalMenuPrincipale = document.getElementById("menu-principal");
 var btnJouer = document.getElementById("btn-jouer");
 
-function modalMenuPrincipale() {
-
-}
+// Clique du Bouton Jouer
 function funcbtnJouer() {
     modalMenuPrincipale.style.display = "none";
     modalPlayers.style.display = "block";

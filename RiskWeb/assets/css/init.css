@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-/*Menu-Pricipale----------------------*/
+/*Menu-Pricipal----------------------*/
 #myVideo {
     position: absolute;
     top: 0;
@@ -20,7 +20,7 @@ body {
     min-width: 100%;
     min-height: 100%;
 }
-#menu-principale {
+#menu-principal {
     position: absolute;
     left: 35%;
     right: 35%;
@@ -38,13 +38,13 @@ body {
     max-height: 500px;
 }
 
-#menu-principale h1 {
+#menu-principal h1 {
     font-family: 'Tangerine', cursive;
     color: aliceblue;
     font-size: 70px;
 }
 
-#menu-principale button {
+#menu-principal button {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5px;
