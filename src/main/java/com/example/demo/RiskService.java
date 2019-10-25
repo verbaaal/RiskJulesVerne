@@ -69,6 +69,10 @@ public class RiskService {
 		
 	}
 
+	/**
+	 * supprime tous les players de la bdd
+	 * 
+	 */
 	public void deletePlayers() {
 		playerRepo.deleteAll();
 	}
