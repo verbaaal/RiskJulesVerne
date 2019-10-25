@@ -260,4 +260,16 @@ function getValue() {
 }
 sendButton.onclick = getValue;
 
+//Lauree
+// Modal system
+var modalPlayers = document.getElementById("content");
+var modalMenuPrincipale = document.getElementById("menu-principale");
+var btnJouer = document.getElementById("btn-jouer");
 
+function modalMenuPrincipale() {
+
+}
+function funcbtnJouer() {
+    modalMenuPrincipale.style.display = "none";
+    modalPlayers.style.display = "block";
+}
