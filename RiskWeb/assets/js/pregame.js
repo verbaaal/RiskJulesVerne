@@ -1,5 +1,6 @@
 //url liste des players
 var urlPlayers = "http://localhost:8080/getPlayer";
+var urlTerritorries = "http://localhost:8080/getTerritory"
 
 // recuperation de la liste de joueurs dans la bdd
 let players
@@ -37,14 +38,7 @@ fetch(urlPlayers)
             } else {
                 nbContPlayer.innerHTML = 0;
             }
-            nbContPlayer.innerHTML +=" continent(s)"
-
-            // itemPlayer.innerHTML += i+1;
-            // itemPlayer.innerHTML += " | ";
-            // itemPlayer.innerHTML += 
-            // itemPlayer.innerHTML += " | Territoires - "
-            // itemPlayer.innerHTML += 0;
-            // itemPlayer.innerHTML += " Continents"
+            nbContPlayer.innerHTML += " continent(s)"
 
             //insertion du contenu
             boxPlayer.appendChild(ulPlayer)
@@ -53,3 +47,9 @@ fetch(urlPlayers)
             ulPlayer.appendChild(nbContPlayer)
         }
     })
+fetch(urlTerritorries)
+.then(function (response) {
+    return response.json()
+}).then(function (territories) {
+
+})
