@@ -11,19 +11,19 @@
 </head>
 
 <body>
-        <video autoplay muted loop id="myVideo">
-                <source src="assets/img/bg.webm" type="video/webm">
-        </video>
+    <!-- Background Vidéo -->
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/img/bg.webm" type="video/webm">
+    </video>
+    <!-- Menu Principal -->
+    <div id="menu-principal">
+        <h1>Risk Jules Verne</h1>
+        <button id="btn-jouer" onclick="funcbtnJouer()">Jouer</button>
+        <button>Paramètres</button>
+        <button>Quitter</button>
+    </div>
 
-        <div id="menu-principale">
-            <h1>Risk Jules Verne</h1>
-            <button id="btn-jouer" onclick="funcbtnJouer()">Jouer</button>
-            <button>Paramètres</button>
-            <button>Quitter</button>
-        </div>
-
-
-        <div id ="content">
+    <div id="content">
         <div id="modal-players">
             <label for="nbJoueurs">Nombre de joueurs</label><br>
             <select name="nbJoueurs" id="nbJoueurs">
@@ -37,8 +37,7 @@
             <button type="submit" id="envoyer">envoyer</button>
         </div>
     </div>
+
     <script src="assets/js/init.js"></script>
 
-</body>
-
-</html>
+</body></html>
