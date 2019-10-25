@@ -1,31 +1,117 @@
+/*General*/
+html {
+    margin: 0;
+    background-color: black;
+}
 
-.joueur1{
+body {
+    margin: 0;
+}
+
+/*Menu-Pricipale----------------------*/
+#myVideo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+#menu-principale {
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    top: 25%;
+    bottom: 35%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    max-width: 900px;
+    max-height: 500px;
+}
+
+#menu-principale h1 {
+    font-family: 'Tangerine', cursive;
+    color: aliceblue;
+    font-size: 70px;
+}
+
+#menu-principale button {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: aliceblue;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Menu selection nbr Joueurs----------*/
+#modal-players {}
+
+#content {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    left: 35%;
+    right: 35%;
+    top: 35%;
+    bottom: 35%;
+    display: none;
+    min-height: 395px;
+}
+
+.joueur1 {
     width: 10px;
     height: 10px;
     background-color: red;
 }
-.joueur2{
+
+.joueur2 {
     width: 10px;
     height: 10px;
     background-color: blue;
 }
-.joueur3{
+
+.joueur3 {
     width: 10px;
     height: 10px;
     background-color: green;
 }
-.joueur4{
+
+.joueur4 {
     width: 10px;
     height: 10px;
     background-color: orange;
 }
-.joueur5{
+
+.joueur5 {
     width: 10px;
     height: 10px;
     background-color: brown;
 }
-.joueur6{
+
+.joueur6 {
     width: 10px;
     height: 10px;
     background-color: purple;
 }
+
+
+
+
+
+
