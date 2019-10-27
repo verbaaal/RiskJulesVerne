@@ -60,14 +60,6 @@ public class RiskService {
 		return  (ArrayList<Territory>) territoryRepo.findAll();
 	}
 	
-	public void attack() {
-		 
-		List<Territory> myList = territoryRepo.findAll();
-		
-		Territory one = myList.get(35);
-		System.out.println(one);
-		
-	}
 
 	/**
 	 * supprime tous les players de la bdd

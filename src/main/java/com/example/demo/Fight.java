@@ -4,78 +4,43 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Fight {
-	
+
 	private Boolean canPick;
 	private List<Territory> canAttack;
-	private int pickNbAttacker;
-	
-	
-	Player player1 = new Player();
-	Player player2 = new Player();
-	Continent cont1 = new Continent();
-	Territory terr1 = new Territory(1, "caca", cont1, player1, 7);
-	Territory terr2 = new Territory(7, "pipi", cont1, player2, 5);
+	private int nbAttacker;
+	private int nbDefenser;
+	@Autowired
+	private Territory terrAtk;
+	@Autowired
+	private Territory terrDef;
 
-	//	choix du territoire attaquant
-	
-	public Boolean territoryPick() {
-		
-		if (terr1.getOwner().getId() == player1.getId() && terr1.getNbrUnit() > 1) {
-			
-			canPick = true;
-			
-		}
-		
-		else {
-			
-			canPick = false;
-			
-		}
-		return canPick;		
-		
+	public Fight () {
 	}
-	
-	//	choix du territoire attaqué
-	
-	
-	public List<Territory> territoryAttack() {
-		if (terr2.getOwner().getId() != player1.getId()) {
-			canAttack = terr1.getNeighbors();
-			for (int i = 0; i<canAttack.size(); i++) {
-				return canAttack;
-			}
-		}
-		return canAttack;
-		
+
+	public Fight (Territory terrAtk, Territory terrDef, int nbAttacker, int nbDefenser) {
+		terrAtk = this.terrAtk;
+		terrDef = this.terrDef;
+		nbAttacker = this.nbAttacker;
+		nbDefenser = this.nbDefenser;
 	}
-	//				
-	//	choix du nombre d'attaquant max 3
-	//	
-	public int pickAttacker() {
-		if (terr1.getNbrUnit() >= 3 ) {
-			pickNbAttacker <= 3;
-		}
-		else if (terr1.getNbrUnit() == 2) {
-			pickNbAttacker = 2;
-		}
-		return pickNbAttacker;
-	}
-	
+
 	/**
 	 * fonction lancement 1 dés
 	 * 
 	 * @return
 	 */
-	
+
 	public int rollDice() {
 		int min = 1;
 		int max = 6;
 		int roll = min + (int)(Math.random() * ((max - min) + 1));
 		return roll;
 	}
-	
-	
+
+
 	/**
 	 * 
 	 * fonction qui permet de lancer plusieurs des
@@ -107,24 +72,59 @@ public class Fight {
 		}	
 		return resultat;
 	}
-	
-	public ArrayList<Integer>fight(int nbDiceAttacker, int nbDiceDefender, Territory territoryAtk,Territory territoryDef) {
-		
-		ArrayList<Integer> resultAtk = lancerXDes(nbDiceAttacker);
-		ArrayList<Integer> resultDef = lancerXDes(nbDiceDefender);
 
-		if( resultAtk.get(0) > resultDef.get(0)) {
-			territoryDef.setNbrUnit(-1);
-			}else if (resultAtk.get(0) < resultDef.get(0)) {
-				territoryAtk.setNbrUnit(-1);	
-			}else {
-				territoryAtk.setNbrUnit(-1);
-			}
-		
-		return resultAtk;
+	public ArrayList<Territory> start(int nbAttacker, int nbDefenser, Territory territoryAtk,Territory territoryDef) {
+
+		ArrayList<Integer> resultAtk = lancerXDes(nbAttacker);
+		ArrayList<Integer> resultDef = lancerXDes(nbDefenser);
+		ArrayList<Territory> territoryState = new ArrayList();
+		ArrayList<Integer> resultList = compareList(resultAtk, resultDef);
+		int nbUnitAtk = territoryAtk.getNbrUnit();
+		int nbUnitDef = territoryDef.getNbrUnit();
+		int troopAttackLost = resultList.get(0);
+		int troopDefLost = resultList.get(1);
+		territoryAtk.setNbrUnit(nbUnitAtk-troopAttackLost);
+		territoryDef.setNbrUnit(nbUnitAtk-troopDefLost);
+		territoryDef.getNbrUnit();
+		if (territoryDef.getNbrUnit() == 0) {
+			territoryDef.setOwner(territoryAtk.getOwner());
+		}
+		territoryState.add(territoryAtk);
+		territoryState.add(territoryDef);
+		// Attaque puis défense.
+		return territoryState;	
 	}
-	
-	
-	
-	
+
+	public ArrayList<Integer> compareList(ArrayList<Integer> resultAttack, ArrayList<Integer> resultDefense) {
+
+		int maxSize = 0;
+		int attPoint = 0;
+		int defPoint = 0;
+		ArrayList<Integer> results = new ArrayList();
+
+		if(resultAttack.size() < resultDefense.size()) {
+			maxSize = resultAttack.size();
+		}
+		else {
+			maxSize = resultDefense.size();
+		}
+
+
+		for (int i = 0 ; i<maxSize ; i++) {
+			if (resultAttack.get(i) <= resultDefense.get(i)) {
+				attPoint++;
+			}
+			else {
+				defPoint++;
+			}
+		}
+		results.add(attPoint);
+		results.add(defPoint);
+		
+		return results;
+	}
+
+
+
+
 }
