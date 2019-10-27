@@ -190,17 +190,6 @@ public class Territory {
 		this.neighbors = neighbors;
 	}
 
-	public Boolean isNeighboor(Territory territory) {
-
-		if( 36  == territory.getId()){
-
-			return true;
-
-		} else {
-			return false;
-		}
-
-	}
 
 	
 	
