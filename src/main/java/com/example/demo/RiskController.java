@@ -79,7 +79,11 @@ public class RiskController {
     public void setOwner(@RequestBody Player player,@PathVariable int territoryId) {
     	service.setOwner(player, territoryId);
 
-   
+    }
+    
+    @PutMapping("/setAllOwnersToNull")
+    public void setAllOwnersToNull() {
+    	service.setAllOwnersToNull();
     }
     
 }
