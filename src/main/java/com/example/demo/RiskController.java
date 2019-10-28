@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -81,8 +82,8 @@ public class RiskController {
 	}
 	
 	@GetMapping("/fight/{attacker}/{attUnit}/{defender}/{defUnit}")
-	public void getFightResult() {
-		service.getFightResult();
+	public void getFightResult(@PathVariable int terrAtk,@PathVariable int nbAtk, @PathVariable int terrDef,@PathVariable int nbDef) {
+		service.getFightResult(terrAtk, nbAtk, terrDef, nbDef);
 	}
 
     @PutMapping("/setOwner/{territoryId}")
@@ -95,5 +96,9 @@ public class RiskController {
     public void setAllOwnersToNull() {
     	service.setAllOwnersToNull();
     }
-f
+    
+    @GetMapping("/getTerritory/{id}")
+    public Territory getTerritoryById(@PathVariable Integer id) {
+    	return service.getTerritoryById(id);
+    }
 }

@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -90,7 +91,11 @@ public class RiskService {
 		playerRepo.deleteAll();
 	}
 
-	public void getFightResult() {
+	public void getFightResult(int terrAtk, int nbAtk, int terrDef, int nbDef) {
 		
+	}
+	
+	public Territory getTerritoryById(Integer id) {
+		return territoryRepo.findById(id).get();
 	}
 }
