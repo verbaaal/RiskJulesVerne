@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+
 
 
 //permet les requetes cross origine
@@ -71,7 +75,19 @@ public class RiskController {
     	service.deletePlayers();
     }
     
-	@PutMapping("/updateTerr")
+
+    @PutMapping("/setOwner/{territoryId}")
+    public void setOwner(@RequestBody Player player,@PathVariable int territoryId) {
+    	service.setOwner(player, territoryId);
+
+    }
+    
+    @PutMapping("/setAllOwnersToNull")
+    public void setAllOwnersToNull() {
+    	service.setAllOwnersToNull();
+    }
+    
+    @PutMapping("/updateTerr")
 	public void updateTerritory(@RequestBody Territory terr) {
 		service.updateTerritory(terr);
 	}
@@ -79,7 +95,5 @@ public class RiskController {
 	@GetMapping("/fight/{attacker}/{attUnit}/{defender}/{defUnit}")
 	public void getFightResult() {
 		service.getFightResult();
-	}
-	
-    
+	}    
 }

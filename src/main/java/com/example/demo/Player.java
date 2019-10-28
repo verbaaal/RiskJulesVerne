@@ -183,7 +183,9 @@ public class Player {
 		this.continentsPlayer.add(continent);
 	}
 
-
+	public void addTerritoryToPlayer(Player player, Territory territory) {
+		this.territoriesPlayer.add(territory);
+	}
 
 
 

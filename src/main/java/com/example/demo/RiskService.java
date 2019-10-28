@@ -64,6 +64,24 @@ public class RiskService {
 	}
 	
 
+	
+	/**
+	 * set un owner au territoire
+	 * @param player
+	 * @param territory
+	 */
+	public void setOwner(Player player,int territoryId) {
+
+		
+		Territory territory = territoryRepo.findById(territoryId).get();
+		territory.setOwner(player);
+		territoryRepo.save(territory);
+	}
+
+	public void setAllOwnersToNull() {
+		
+	}
+
 	/**
 	 * supprime tous les players de la bdd
 	 * 
