@@ -75,6 +75,16 @@ public class RiskController {
     	service.deletePlayers();
     }
     
+	@PutMapping("/updateTerr")
+	public void updateTerritory(@RequestBody Territory terr) {
+		service.updateTerritory(terr);
+	}
+	
+	@GetMapping("/fight/{attacker}/{attUnit}/{defender}/{defUnit}")
+	public void getFightResult() {
+		service.getFightResult();
+	}
+
     @PutMapping("/setOwner/{territoryId}")
     public void setOwner(@RequestBody Player player,@PathVariable int territoryId) {
     	service.setOwner(player, territoryId);

@@ -28,7 +28,6 @@ public class RiskService {
 	public Player createPlayer(Player player) {
 		
 		return playerRepo.save(player);
-
 	}
 	
 	/**
@@ -60,6 +59,10 @@ public class RiskService {
 		return  (ArrayList<Territory>) territoryRepo.findAll();
 	}
 	
+	public void updateTerritory (Territory terr) {
+		territoryRepo.save(terr);
+	}
+	
 
 	
 	/**
@@ -85,5 +88,9 @@ public class RiskService {
 	 */
 	public void deletePlayers() {
 		playerRepo.deleteAll();
+	}
+
+	public void getFightResult() {
+		
 	}
 }
