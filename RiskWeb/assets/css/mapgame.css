@@ -1,0 +1,263 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+}
+
+#map-container {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#fantasyMap {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#statesBorders {
+    stroke-opacity: 0;
+    fill: transparent;
+}
+
+.territory {
+    pointer-events: initial;
+}
+
+path.territory:hover {
+    stroke: rgb(0, 0, 0);
+    opacity: 1;
+    stroke-width: 2.41;
+    stroke-dasharray: 0;
+    stroke-linecap: none;
+    filter: inherit;
+    cursor: pointer;
+}
+
+#sea_island {
+    opacity: 0.7;
+}
+
+#coastLine {
+    opacity: 0;
+}
+
+textPath {
+    pointer-events: none;
+}
+
+#provinceLabels text {
+    pointer-events: none;
+}
+
+#container-names {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    opacity: 60%;
+    height: 43px;
+    text-align: center;
+    font-family: 'Charmonman', cursive;
+    font-weight: 300;
+    color: white;
+    pointer-events: all;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 1.2rem;
+}
+
+#name-territory-text {
+    font-size: 1.8rem;
+
+}
+
+#container-names #evenement {
+    background-color: rgba(229, 255, 0, 0.2);
+}
+
+#container-progress {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 18px;
+    border: 2px 2px 2px 2px black;
+    background-color: transparent;
+}
+
+.progress {
+    border-radius: 0%;
+
+}
+
+.progress-bar:hover {
+    border: yellow 2px solid;
+    border-top: inherit;
+}
+
+#container-svg-dice {
+    width: 190px;
+    height: 155px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: all;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.39);
+    color: rgb(255, 255, 255);
+    padding-bottom: 2%;
+    border-radius: 2%;
+    display: none;
+}
+
+/*Container-player*/
+#container-player {
+    width: 190px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    pointer-events: all;
+    cursor: pointer;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-bottom: 2%;
+    border-radius: 2%;
+    left: -170px;
+    transition: 0.3s;
+}
+
+#container-player:hover {
+    left: -0px;
+}
+
+.box {
+    background-color: rgb(10, 24, 25, 0.4);
+    color: aliceblue;
+    border-radius: 0% 5% 5% 0%;
+    box-shadow: inset 2px 2px 10px 2px black;
+    opacity: 0.7;
+    font-family: 'Charmonman', cursive;
+    text-shadow: 1px 2px 2px black;
+}
+
+.box:hover {
+    box-shadow: 2px 2px 4px 4px black;
+    cursor: pointer;
+    opacity: 0.9;
+    
+}
+
+
+.box h3 {
+    text-align: center;
+    padding: 12px;
+    font-size: 1vw;
+}
+
+#box1 {
+    background-color: red;
+
+}
+
+#box2 {
+    background-color: blue;
+
+}
+
+#box3 {
+    background-color: green;
+
+}
+
+#box4 {
+    background-color: orange;
+
+}
+
+#box5 {
+    background-color: saddlebrown;
+}
+
+#box6 {
+    background-color: purple;
+}
+#reglage{
+    position: absolute;
+    top:40px;
+    right: 0;
+    background-color: transparent;
+    margin-right: 20px;
+}
+#img-reglage {
+font-size: 2rem;
+cursor: pointer;
+}
+#img-reglage:hover {
+color:aliceblue ;   
+}
+
+#menuPrincipal {
+    background-image: url("../img/BcaKKAG7i.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 350px;
+    height: 400px;
+    margin-right: 38%;
+    margin-left: 40%;
+    display: none;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    padding:25%;
+}
+
+
+.buttonMenu {
+    margin-top: 1%;
+    font-family: 'Tangerine', cursive;
+    cursor: pointer;
+}
+
+#btn-logo-volume-off {
+    position: relative;
+    bottom: -50px;
+    left: 150px;
+    margin-right: 38%;
+    margin-left: 40%;
+    width: auto;
+}
+
+#logo-volume-off {
+font-size: 2em;
+cursor: pointer;
+
+}
