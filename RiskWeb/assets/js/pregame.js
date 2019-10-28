@@ -58,6 +58,6 @@ fetch(urlTerritorries)
     }
     
 }).then(function (territories) {
-    console.log(territories[0])
+    console.log(territories)
 
 })
