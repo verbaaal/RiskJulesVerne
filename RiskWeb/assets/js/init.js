@@ -9,17 +9,17 @@ var divInput = document.getElementById('inputPlayers')
 
 
 //suppression de la liste de joueurs dans la bdd
-//const deleteAll = async function (data) {
-  //  let response = await fetch(urlDelete, {
-   //     'method': 'DELETE',
-  //  })
-  //  if(response.ok){
-  //      console.log("message : la liste des joueurs a bien été réinitialisée")
-  //  }else{
-   //     console.log('erreur dans la suppression de la liste des joueurs')
-   // }
-//}
-//deleteAll();
+const deleteAll = async function (data) {
+   let response = await fetch(urlDelete, {
+       'method': 'DELETE',
+   })
+   if(response.ok){
+       console.log("message : la liste des joueurs a bien été réinitialisée")
+   }else{
+       console.log('erreur dans la suppression de la liste des joueurs')
+   }
+}
+deleteAll();
 
 /**
  * modifie l'affichage du nombre des inputs 
@@ -109,7 +109,7 @@ const insertPost = async function (data) {
  * 
  */
 function getNextPage() {
-    document.location.href = "game.html"
+    document.location.href = "mapgame.html"
 }
 /**
  * declenchement de la fonction getNextPage sous 1s
