@@ -8,13 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class Fight {
 
-	private Boolean canPick;
-	private List<Territory> canAttack;
 	private int nbAttacker;
 	private int nbDefenser;
-	@Autowired
 	private Territory terrAtk;
-	@Autowired
 	private Territory terrDef;
 
 	public Fight () {
