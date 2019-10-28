@@ -1,0 +1,116 @@
+html {
+    height: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    background-repeat: no-repeat;
+    background-image: url("../img/istockphoto-1060610740-170667a.jpg");
+    background-size: cover;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+/*----------------*/
+#boxgame {
+    /*background-color: cadetblue;*/
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    padding: 12px;
+    width: 70%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+}
+#game {
+    /*background-color: cadetblue;*/
+    margin: 0;
+    flex-direction: column;
+    display: flex;
+    padding: 12px;
+    width: 70%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    min-width: 800px;
+}
+h1 {
+    color: black;
+    text-align: center;
+    font-family: 'Tangerine', cursive;
+    font-size: 70px;
+    padding: 3px;
+}
+
+.ligne {
+    display: flex;
+}
+
+.mer {
+    width: 80px;
+    height: 80px;
+    border: 1px transparent solid;
+}
+
+.terre {
+    background-color: saddlebrown;
+    width: 80px;
+    height: 80px;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Continent Background */
+
+.terres-volcaniques {
+    background-color: orangered;
+}
+.terres-cristalisees {
+    background-color: violet;
+}
+.les-marecages {
+    background-color: brown;
+}
+.les-cavernes {
+    background-color: rosybrown;
+}
+.la-champignoneuse {
+    background-color: darkgoldenrod;
+}
+.l-ilot-axel {
+    background-color: mediumslateblue;
+}
+#box-add-unit {
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    display: flex;
+    width: 10%;
+    justify-content: space-around;
+}
+#box-list-player {
+    list-style:none;
+    position: absolute;
+    top: 40px;
+    right: 120px;
+}
+#box-list-player li{
+    list-style:none;
+}.name-territory {
+    font-size: 12px;
+}
+

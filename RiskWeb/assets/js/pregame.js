@@ -1,28 +1,55 @@
 //url liste des players
-var urlGet = "http://localhost:8080/getPlayer";
+var urlPlayers = "http://localhost:8080/getPlayer";
 
 // recuperation de la liste de joueurs dans la bdd
-var data =fetch(urlGet)
+let players
+fetch(urlPlayers)
     .then(function (response) {
         return response.json()
-    }).then(function (data) {
-        return data[0].name
+    }).then(function (players) {
+
+        let boxPlayer = document.getElementById('box-list-player');
+        for (let i = 0; i < players.length; i++) {
+            //creation des éléments de liste player
+            let ulPlayer = document.createElement('ul');
+            let namePlayer = document.createElement('li');
+            let nbTerrPlayer = document.createElement('li');
+            let nbContPlayer = document.createElement('li')
+            //attibution des id
+            ulPlayer.setAttribute('id', 'ul-Players' + 1);
+            namePlayer.setAttribute('id', 'j' + (i + 1));
+            nbTerrPlayer.setAttribute('id', 'nbterrJ' + (i + 1));
+            nbContPlayer.setAttribute('id', 'nbContJ' + (i + 1))
+
+            //ajout contenu
+            //nom du joueur
+            namePlayer.innerHTML = players[i].name;
+            //nombre de territoires du joueur
+            if (players[i].territoriesPlayer != null) {
+                nbTerrPlayer.innerHTML = players[i].territoriesPlayer
+            } else {
+                nbTerrPlayer.innerHTML = 0;
+            }
+            nbTerrPlayer.innerHTML += " territoire(s)";
+            //nombre de continent du joueur
+            if (players[i].continentsPlayer != null) {
+                nbContPlayer.innerHTML = players[i].continentsPlayer
+            } else {
+                nbContPlayer.innerHTML = 0;
+            }
+            nbContPlayer.innerHTML +=" continent(s)"
+
+            // itemPlayer.innerHTML += i+1;
+            // itemPlayer.innerHTML += " | ";
+            // itemPlayer.innerHTML += 
+            // itemPlayer.innerHTML += " | Territoires - "
+            // itemPlayer.innerHTML += 0;
+            // itemPlayer.innerHTML += " Continents"
+
+            //insertion du contenu
+            boxPlayer.appendChild(ulPlayer)
+            ulPlayer.appendChild(namePlayer)
+            ulPlayer.appendChild(nbTerrPlayer)
+            ulPlayer.appendChild(nbContPlayer)
+        }
     })
-// var nbjoueur = document.getElementById('nbPlayer');
-// nbjoueur.innerHTML += data.length;
-// var test;
-// const getPlayer = async function () {
-//     try {
-//         let response = await fetch(urlGet)
-//         if (response.ok) {
-//             let datas = await response.json()
-
-//             console.log(datas)
-//         } else {
-//             console.error('Retour du serveur : ', response.status)
-//         }
-//     } catch (e){
-//         console.log(e)
-//     }
-// }
-

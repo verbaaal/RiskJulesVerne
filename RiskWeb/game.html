@@ -1,17 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Risk - jule verne</title>
+    <title>Risk Jules Verne</title>
+    <link rel="stylesheet" href="assets/css/game.css">
+        <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Tangerine&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <h1>2eme phase</h1>
-    <div id="nbPlayer">nombre de joueur : </div>
-    <div id="game">
+    <div id="boxgame">
+        <h1>Risk Jules Verne</h1>
+        <div id="game">
+
+            <div class="ligne">
+                <div class="mer" id="x1y1">
+                </div>
+                <div class="mer" id="x2y1">
+                </div>
+                <div class="mer" id="x3y1">
+                </div>
+                <div class="mer" id="x4y1">
+                </div>
+                <div class="mer" id="x5y1">
+                </div>
+                <div class="terre les-cavernes" id="x6y1">
+                    <div class="name-territory">La Crypte des oubliés</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y1">
+                    <div class="name-territory">La Caverne des lamentations</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y1">
+                </div>
+                <div class="mer" id="x9y1">
+                </div>
+                <div class="mer" id="x10y1">
+                </div>
+                <div class="mer" id="x11y1">
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre l-ilot-axel" id="x1y2">
+                    <div class="name-territory">L'île des géants</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre l-ilot-axel" id="x2y2">
+                    <div class="name-territory">L'île mysterieuse</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y2">
+                </div>
+                <div class="mer" id="x4y2">
+                </div>
+                <div class="mer" id="x5y2">
+                </div>
+                <div class="terre les-cavernes" id="x6y2">
+                    <div class="name-territory">Le Coeur de pierre</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y2">
+                    <div class="name-territory">La Fosse sombre</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y2">
+                </div>
+                <div class="mer" id="x9y2">
+                </div>
+                <div class="terre la-champignoneuse" id="x10y2">
+                    <div class="name-territory">La Forêt de champignons géants</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre la-champignoneuse" id="x11y2">
+                    <div class="name-territory">La Clairière fongique</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre l-ilot-axel" id="x1y3">
+                    <div class="name-territory">L'île du tonnerre</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre l-ilot-axel" id="x2y3">
+                    <div class="name-territory">Le Temple engloutit</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y3">
+                </div>
+                <div class="mer" id="x4y3">
+                </div>
+                <div class="mer" id="x5y3">
+                </div>
+                <div class="terre les-cavernes" id="x6y3">
+                    <div class="name-territory">Les Profondeurs rochenoires</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-cavernes" id="x7y3">
+                    <div class="name-territory">Les Mortemines</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y3">
+                </div>
+                <div class="mer" id="x9y3">
+                </div>
+                <div class="terre la-champignoneuse" id="x10y3">
+                    <div class="name-territory">La Vallée champorage</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre la-champignoneuse" id="x11y3">
+                    <div class="name-territory">Le Bois des champs éternels</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="mer" id="x1y4"></div>
+                <div class="terre terres-volcaniques" id="x2y4">
+                    <div class="name-territory">La forge des âmes</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y4">
+                    <div class="name-territory">La Fournaise</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y4">
+                    <div class="name-territory">Le Cratère infernal</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x5y4">
+                </div>
+                <div class="mer" id="x6y4">
+                </div>
+                <div class="mer" id="x7y4">
+                </div>
+                <div class="mer" id="x8y4">
+                </div>
+                <div class="mer" id="x9y4">
+                </div>
+                <div class="mer" id="x10y4">
+                </div>
+                <div class="terre terres-cristalisees" id="x11y4">
+                    <div class="name-territory">Les Flèches argentées</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="mer" id="x1y5"></div>
+                <div class="terre terres-volcaniques" id="x2y5">
+                    <div class="name-territory">Les Steppes ardentes</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y5">
+                    <div class="name-territory">Les Serres rocheuse</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y5">
+                    <div class="name-territory">Les Pics Fumants</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x5y5">
+                </div>
+                <div class="terre les-marecages" id="x6y5">
+                    <div class="name-territory">Les Terres ingrates</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y5">
+                    <div class="name-territory">Les Marais Hurlant</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y5">
+                </div>
+                <div class="mer" id="x9y5">
+                </div>
+                <div class="terre terres-cristalisees" id="x10y5">
+                    <div class="name-territory">Les Terres pourpres</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y5">
+                    <div class="name-territory">Les Terres foudroyées</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+
+            <div class="ligne">
+                <div class="terre terres-volcaniques" id="x1y6">
+                    <div class="name-territory">La Crête de givrefeu</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x2y6">
+                    <div class="name-territory">Le Sanctuaire du courage</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x3y6">
+                    <div class="name-territory">Les Flèches ardentes</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x4y6">
+                    <div class="name-territory">Le Coeur de magma</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x5y6">
+                    <div class="name-territory">Les Pics fumants</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x6y6">
+                    <div class="name-territory">La Tourbière</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y6">
+                    <div class="name-territory">Les Marais pourrissants</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x8y6">
+                </div>
+                <div class="terre terres-cristalisees" id="x9y6">
+                    <div class="name-territory">La Couronne gelée</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x10y6">
+                    <div class="name-territory">Les Tranchantes</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y6">
+                    <div class="name-territory">Le Coeur de cristal</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+            <div class="ligne">
+                <div class="terre terres-volcaniques" id="x1y7">
+                    <div class="name-territory">La Citadelle de feu</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-volcaniques" id="x2y7">
+                    <div class="name-territory">Le Rivage bouillonnant</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x3y7">
+                </div>
+                <div class="mer" id="x4y7">
+                </div>
+                <div class="mer" id="x5y7">
+                </div>
+                <div class="terre les-marecages" id="x6y7">
+                    <div class="name-territory">Les Rivages brisés</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre les-marecages" id="x7y7">
+                    <div class="name-territory">Le Sombre marécages</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="mer" id="x1y7"></div>
+                <div class="terre terres-cristalisees" id="x9y7">
+                    <div class="name-territory">Les Pics jumeaux</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x10y7">
+                    <div class="name-territory">Les Milles pointes</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+                <div class="terre terres-cristalisees" id="x11y7">
+                    <div class="name-territory">La Citadelle de glace</div>
+                    <div class="nbr-unit">0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="box-add-unit">
+        <button id="+">+</button>
+        <div id=nbr-unit>20</div>
+        <button id="-">-</button>
+    </div>
+
+    <div id="box-list-player">
 
     </div>
-    <script src="assets/js/pregame.js"></script>
-</body>
-</html>
+<script src="assets/js/pregame.js"></script>
+</body></html>
+

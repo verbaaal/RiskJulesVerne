@@ -66,6 +66,10 @@ public class RiskController {
     public void attack() {
     	service.attack();
     }
+    
+    /**
+     * demande la suppression de tous les players
+     */
     @DeleteMapping("/deleteAll")
     public void deletePlayers() {
     	service.deletePlayers();
