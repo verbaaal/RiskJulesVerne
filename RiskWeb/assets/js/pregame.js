@@ -49,7 +49,12 @@ fetch(urlPlayers)
     })
 fetch(urlTerritorries)
 .then(function (response) {
-    return response.json()
+    if(response.ok){
+        console.log('message : liste des territoires recupérée')
+        return response.json()
+    }
+    
 }).then(function (territories) {
+    console.log(territories[0])
 
 })
