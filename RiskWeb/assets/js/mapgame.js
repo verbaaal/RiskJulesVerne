@@ -39,7 +39,7 @@ document.onclick = function afficheNameTerritory(event) {
             // Les Cavernes
 
             case "province73" :
-                    nameTerritoryText.innerHTML = "La Caverne des lamentations";
+                    nameTerritoryText.innerHTML = "La Caverne des Lamentations";
                     break;
             case "province74" :
                     nameTerritoryText.innerHTML = "La Crypte des Oubliés";
@@ -60,7 +60,7 @@ document.onclick = function afficheNameTerritory(event) {
             // La Champignoneuse
 
             case "province12" :
-                    nameTerritoryText.innerHTML = "La Fôret de Champignons Géants";
+                    nameTerritoryText.innerHTML = "La Fôret des Champignons Géants";
                     break;
             case "province13" :
                     nameTerritoryText.innerHTML = "La Valée Fongique";
@@ -117,13 +117,13 @@ document.onclick = function afficheNameTerritory(event) {
                     nameTerritoryText.innerHTML = "Le Bassin des Regrets";
                     break;
             case "province80" :
-                    nameTerritoryText.innerHTML = "Les Marais Hurlant";
+                    nameTerritoryText.innerHTML = "Les Marais Hurlants";
                     break;
             case "province89" :
                     nameTerritoryText.innerHTML = "Les Terres Ingrates";
                     break;
             case "province58" :
-                    nameTerritoryText.innerHTML = "Les Marais Purrisants";
+                    nameTerritoryText.innerHTML = "Les Marais Pourrissants";
                     break;
             case "province55" :
                     nameTerritoryText.innerHTML = "Les Tranchantes";
@@ -171,7 +171,7 @@ document.onclick = function afficheNameTerritory(event) {
                     nameTerritoryText.innerHTML = "La Crête de Givrefeu";
                     break;
                 default :
-                nameTerritoryText.innerHTML = "La Crête de Givrefeu";
+                nameTerritoryText.innerHTML = "Risk Jules Verne";
                 breack;
     
     } 
