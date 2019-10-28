@@ -13,7 +13,5 @@ public class RiskJulesVerneApplication {
 		
 		Renfort renfort = new Renfort();
 		
-		
-
  }
 }

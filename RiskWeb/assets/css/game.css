@@ -3,7 +3,7 @@ html {
     margin: 0;
     border-collapse: collapse;
     background-repeat: no-repeat;
-    background-image: url("/assets/img/istockphoto-1060610740-170667a.jpg");
+    background-image: url("../img/istockphoto-1060610740-170667a.jpg");
     background-size: cover;
 }
 
@@ -113,3 +113,4 @@ h1 {
 }.name-territory {
     font-size: 12px;
 }
+
