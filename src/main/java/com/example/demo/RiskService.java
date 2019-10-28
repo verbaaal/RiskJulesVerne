@@ -64,9 +64,22 @@ public class RiskService {
 		 
 		List<Territory> myList = territoryRepo.findAll();
 		
-		Territory one = myList.get(35);
+		Territory one = myList.get(35);;
 		System.out.println(one);
 		
+	}
+	
+	/**
+	 * set un owner au territoire
+	 * @param player
+	 * @param territory
+	 */
+	public void setOwner(Player player,int territoryId) {
+
+		
+		Territory territory = territoryRepo.findById(territoryId).get();
+		territory.setOwner(player);
+		territoryRepo.save(territory);
 	}
 
 	/**
