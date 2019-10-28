@@ -171,7 +171,7 @@ document.onclick = function afficheNameTerritory(event) {
                     nameTerritoryText.innerHTML = "La Crête de Givrefeu";
                     break;
                 default :
-                nameTerritoryText.innerHTML = "La Crête de Givrefeu";
+                nameTerritoryText.innerHTML = "Risk Jules Verne";
                 breack;
     
     } 

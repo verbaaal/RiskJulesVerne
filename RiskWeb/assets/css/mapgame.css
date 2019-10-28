@@ -261,3 +261,112 @@ font-size: 2em;
 cursor: pointer;
 
 }
+/* Phase suivante */
+#next-phase {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 60%;
+    height: 43px;
+    text-align: center;
+    font-family: 'Charmonman', cursive;
+    font-weight: 300;
+    color: white;
+    pointer-events: all;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 1.2rem;
+    right: 15px;
+    bottom: 100px;
+}
+#btn-next-phase {
+    width: 120px;
+}
+/*Anoucement Phase*/
+
+/*Phase Renfort*/
+
+#phase-renfort  {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 60%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 80%;
+    width: 100%;
+    display: none;
+}
+#phase-renfort h4 {
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    font-size: 200px;
+}
+
+/*Phase Combat*/
+
+#phase-combat  {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 60%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 80%;
+    width: 100%;
+    display: none;
+}
+#phase-combat h4 {
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    font-size: 200px;
+}
+
+/*Phase Manoeuvre*/
+
+#phase-manoeuvre  {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 60%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 80%;
+    width: 100%;
+    display: none;
+}
+#phase-manoeuvre h4 {
+    font-family: 'Charmonman', cursive;
+    font-weight: 800;
+    color: white;
+    font-size: 200px;
+}
