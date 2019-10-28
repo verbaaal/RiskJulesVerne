@@ -62,10 +62,6 @@ public class RiskController {
     	return service.getTerritorys();
     }
     
-    @GetMapping("/attack")
-    public void attack() {
-    	service.attack();
-    }
     
     /**
      * demande la suppression de tous les players
