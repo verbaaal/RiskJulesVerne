@@ -1,75 +1,120 @@
 /*General*/
-html {
-    margin: 0;
-    background-color: black;
-}
 
+html,
 body {
+    width: 100%;
+    height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
-/*Menu-Pricipal----------------------*/
+/*Bg Video*/
+
+#video-fond {
+    width: 100%;
+}
+
 #myVideo {
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    width: 80%;
+    width: 100%;
     height: 100%;
-    min-width: 100%;
-    min-height: 100%;
+    background-color: black;
 }
-#menu-principal {
+
+/*Menu-Pricipal*/
+
+#body-menu {
     position: absolute;
-    left: 35%;
-    right: 35%;
-    top: 25%;
-    bottom: 35%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 500px;
-    max-width: 900px;
-    max-height: 500px;
 }
 
-#menu-principal h1 {
+#title {
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Tangerine', cursive;
     color: aliceblue;
-    font-size: 70px;
-}
-
-#menu-principal button {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: aliceblue;
-    font-family: 'Aref Ruqaa', serif;
-    font-size: 25px;
+    font-size: 6vw;
+    padding: 8px;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-shadow: 2px 2px 4px black;
+    cursor: default;
 }
 
-/*Menu selection nbr Joueurs----------*/
-#modal-players {}
+#menuPrincipal {
+    background-image: url("../img/BcaKKAG7i.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    height: 40%;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.buttonMenu {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: auto;
+    font-family: 'Tangerine', cursive;
+    font-size: 2.5vw;
+    font-weight: 800;
+    width: 100%;
+    cursor: pointer;
+}
+
+#btn-logo-volume-off {
+    position: relative;
+    top: -100px;
+    margin-right: 38%;
+    margin-left: 40%;
+    width: auto;
+}
+
+#logo-volume-off {
+    color: black;
+    cursor: pointer;
+    font-size: 2em;
+    margin: 20px;
+    padding-left: 80%;
+}
+
+/*Menu selection nbr Joueurs*/
+
+#modal-players {
+    display: none;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 8%;
+    height: 80%;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#modal-players button {
+    padding: 10%;
+}
 
 #content {
-    position: absolute;
     background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
     padding: 20px;
     text-align: center;
-    left: 35%;
-    right: 35%;
-    top: 35%;
-    bottom: 35%;
     display: none;
     min-height: 395px;
 }
@@ -109,9 +154,3 @@ body {
     height: 10px;
     background-color: purple;
 }
-
-
-
-
-
-

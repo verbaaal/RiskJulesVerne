@@ -9,17 +9,17 @@ var divInput = document.getElementById('inputPlayers')
 
 
 //suppression de la liste de joueurs dans la bdd
-const deleteAll = async function (data) {
-    let response = await fetch(urlDelete, {
-        'method': 'DELETE',
-    })
-    if(response.ok){
-        console.log("message : la liste des joueurs a bien été réinitialisée")
-    }else{
-        console.log('erreur dans la suppression de la liste des joueurs')
-    }
-}
-deleteAll();
+//const deleteAll = async function (data) {
+  //  let response = await fetch(urlDelete, {
+   //     'method': 'DELETE',
+  //  })
+  //  if(response.ok){
+  //      console.log("message : la liste des joueurs a bien été réinitialisée")
+  //  }else{
+   //     console.log('erreur dans la suppression de la liste des joueurs')
+   // }
+//}
+//deleteAll();
 
 /**
  * modifie l'affichage du nombre des inputs 
@@ -63,7 +63,7 @@ function inputOnLoad() {
         var newInput = document.createElement('input');
         var divColor = document.createElement('div');
         //modification des éléments
-        item.innerHTML = "<br>nom du Joueur " + i + "<br>";
+        item.innerHTML = "<br>Nom du Joueur " + i + "<br>";
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('id', 'joueur' + i)
         newInput.innerHTML = "<br>";
@@ -266,12 +266,40 @@ function postValue() {
 sendButton.onclick = postValue;
 
 // Modal system
-var modalPlayers = document.getElementById("content");
-var modalMenuPrincipale = document.getElementById("menu-principal");
+var btnMenu = document.getElementById("btn");
+var title = document.getElementById("title");
+
+var btnMenu = document.getElementById("btn");
+var modalPlayers = document.getElementById("modal-players");
+var modalMenuPrincipal = document.getElementById("menuPrincipal");
 var btnJouer = document.getElementById("btn-jouer");
+
+var iconesound = document.getElementById("logo-volume-off");
 
 // Clique du Bouton Jouer
 function funcbtnJouer() {
-    modalMenuPrincipale.style.display = "none";
-    modalPlayers.style.display = "block";
+    btnMenu.style.display = "none";
+    modalPlayers.style.display = "flex";
+    iconesound.style.display = "none";
 }
+
+function playMusics(){
+
+
+    if (iconesound.classList == "fas fa-volume-off") {
+        music2.volume=0.5;
+        document.getElementById("music1").play();
+        document.getElementById("music2").play();
+        iconesound.classList = "fas fa-volume-up";
+    } else if (iconesound.classList == "fas fa-volume-up"){
+        iconesound.classList = "fas fa-volume-off";
+        document.getElementById("music1").pause();
+        document.getElementById("music2").pause();
+    }
+}
+var audio = document.getElementsByTagName("audio")
+
+function stopPlayHTMLSound() {
+    document.getElementById("snare").load();
+    document.getElementById("snare").play();
+  }
