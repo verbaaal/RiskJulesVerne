@@ -75,6 +75,9 @@ public class RiskService {
 		territoryRepo.save(territory);
 	}
 
+	public void setAllOwnersToNull() {
+		
+	}
 
 	/**
 	 * supprime tous les players de la bdd
